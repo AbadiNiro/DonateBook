@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84E25264269449F9003606B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25263269449F9003606B2 /* AppDelegate.swift */; };
+		84E25266269449F9003606B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25265269449F9003606B2 /* SceneDelegate.swift */; };
+		84E25268269449F9003606B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25267269449F9003606B2 /* FirstViewController.swift */; };
+		84E2526A269449F9003606B2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25269269449F9003606B2 /* SecondViewController.swift */; };
+		84E2526D269449F9003606B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E2526B269449F9003606B2 /* Main.storyboard */; };
+		84E25270269449F9003606B2 /* DonateBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E2526E269449F9003606B2 /* DonateBook.xcdatamodeld */; };
+		84E25272269449FA003606B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E25271269449FA003606B2 /* Assets.xcassets */; };
+		84E25275269449FA003606B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E25273269449FA003606B2 /* LaunchScreen.storyboard */; };
+		84E25280269449FA003606B2 /* DonateBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2527F269449FA003606B2 /* DonateBookTests.swift */; };
+		84E2528B269449FA003606B2 /* DonateBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2528A269449FA003606B2 /* DonateBookUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E2527C269449FA003606B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E25258269449F9003606B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E2525F269449F9003606B2;
+			remoteInfo = DonateBook;
+		};
+		84E25287269449FA003606B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E25258269449F9003606B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E2525F269449F9003606B2;
+			remoteInfo = DonateBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84E25260269449F9003606B2 /* DonateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E25263269449F9003606B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84E25265269449F9003606B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84E25267269449F9003606B2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		84E25269269449F9003606B2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		84E2526C269449F9003606B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84E2526F269449F9003606B2 /* DonateBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DonateBook.xcdatamodel; sourceTree = "<group>"; };
+		84E25271269449FA003606B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E25274269449FA003606B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E25276269449FA003606B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E2527B269449FA003606B2 /* DonateBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonateBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E2527F269449FA003606B2 /* DonateBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateBookTests.swift; sourceTree = "<group>"; };
+		84E25281269449FA003606B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E25286269449FA003606B2 /* DonateBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonateBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E2528A269449FA003606B2 /* DonateBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateBookUITests.swift; sourceTree = "<group>"; };
+		84E2528C269449FA003606B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84E2525D269449F9003606B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25278269449FA003606B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25283269449FA003606B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84E25257269449F9003606B2 = {
+			isa = PBXGroup;
+			children = (
+				84E25262269449F9003606B2 /* DonateBook */,
+				84E2527E269449FA003606B2 /* DonateBookTests */,
+				84E25289269449FA003606B2 /* DonateBookUITests */,
+				84E25261269449F9003606B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84E25261269449F9003606B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E25260269449F9003606B2 /* DonateBook.app */,
+				84E2527B269449FA003606B2 /* DonateBookTests.xctest */,
+				84E25286269449FA003606B2 /* DonateBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E25262269449F9003606B2 /* DonateBook */ = {
+			isa = PBXGroup;
+			children = (
+				84E25263269449F9003606B2 /* AppDelegate.swift */,
+				84E25265269449F9003606B2 /* SceneDelegate.swift */,
+				84E25267269449F9003606B2 /* FirstViewController.swift */,
+				84E25269269449F9003606B2 /* SecondViewController.swift */,
+				84E2526B269449F9003606B2 /* Main.storyboard */,
+				84E25271269449FA003606B2 /* Assets.xcassets */,
+				84E25273269449FA003606B2 /* LaunchScreen.storyboard */,
+				84E25276269449FA003606B2 /* Info.plist */,
+				84E2526E269449F9003606B2 /* DonateBook.xcdatamodeld */,
+			);
+			path = DonateBook;
+			sourceTree = "<group>";
+		};
+		84E2527E269449FA003606B2 /* DonateBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E2527F269449FA003606B2 /* DonateBookTests.swift */,
+				84E25281269449FA003606B2 /* Info.plist */,
+			);
+			path = DonateBookTests;
+			sourceTree = "<group>";
+		};
+		84E25289269449FA003606B2 /* DonateBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84E2528A269449FA003606B2 /* DonateBookUITests.swift */,
+				84E2528C269449FA003606B2 /* Info.plist */,
+			);
+			path = DonateBookUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84E2525F269449F9003606B2 /* DonateBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E2528F269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBook" */;
+			buildPhases = (
+				84E2525C269449F9003606B2 /* Sources */,
+				84E2525D269449F9003606B2 /* Frameworks */,
+				84E2525E269449F9003606B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DonateBook;
+			productName = DonateBook;
+			productReference = 84E25260269449F9003606B2 /* DonateBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84E2527A269449FA003606B2 /* DonateBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E25292269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookTests" */;
+			buildPhases = (
+				84E25277269449FA003606B2 /* Sources */,
+				84E25278269449FA003606B2 /* Frameworks */,
+				84E25279269449FA003606B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E2527D269449FA003606B2 /* PBXTargetDependency */,
+			);
+			name = DonateBookTests;
+			productName = DonateBookTests;
+			productReference = 84E2527B269449FA003606B2 /* DonateBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84E25285269449FA003606B2 /* DonateBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E25295269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookUITests" */;
+			buildPhases = (
+				84E25282269449FA003606B2 /* Sources */,
+				84E25283269449FA003606B2 /* Frameworks */,
+				84E25284269449FA003606B2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E25288269449FA003606B2 /* PBXTargetDependency */,
+			);
+			name = DonateBookUITests;
+			productName = DonateBookUITests;
+			productReference = 84E25286269449FA003606B2 /* DonateBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84E25258269449F9003606B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = donatebook;
+				TargetAttributes = {
+					84E2525F269449F9003606B2 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					84E2527A269449FA003606B2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 84E2525F269449F9003606B2;
+					};
+					84E25285269449FA003606B2 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 84E2525F269449F9003606B2;
+					};
+				};
+			};
+			buildConfigurationList = 84E2525B269449F9003606B2 /* Build configuration list for PBXProject "DonateBook" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84E25257269449F9003606B2;
+			productRefGroup = 84E25261269449F9003606B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84E2525F269449F9003606B2 /* DonateBook */,
+				84E2527A269449FA003606B2 /* DonateBookTests */,
+				84E25285269449FA003606B2 /* DonateBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84E2525E269449F9003606B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E25275269449FA003606B2 /* LaunchScreen.storyboard in Resources */,
+				84E25272269449FA003606B2 /* Assets.xcassets in Resources */,
+				84E2526D269449F9003606B2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25279269449FA003606B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25284269449FA003606B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84E2525C269449F9003606B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E2526A269449F9003606B2 /* SecondViewController.swift in Sources */,
+				84E25268269449F9003606B2 /* FirstViewController.swift in Sources */,
+				84E25264269449F9003606B2 /* AppDelegate.swift in Sources */,
+				84E25270269449F9003606B2 /* DonateBook.xcdatamodeld in Sources */,
+				84E25266269449F9003606B2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25277269449FA003606B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E25280269449FA003606B2 /* DonateBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E25282269449FA003606B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E2528B269449FA003606B2 /* DonateBookUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E2527D269449FA003606B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E2525F269449F9003606B2 /* DonateBook */;
+			targetProxy = 84E2527C269449FA003606B2 /* PBXContainerItemProxy */;
+		};
+		84E25288269449FA003606B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E2525F269449F9003606B2 /* DonateBook */;
+			targetProxy = 84E25287269449FA003606B2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84E2526B269449F9003606B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E2526C269449F9003606B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84E25273269449FA003606B2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E25274269449FA003606B2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84E2528D269449FA003606B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84E2528E269449FA003606B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84E25290269449FA003606B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84E25291269449FA003606B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84E25293269449FA003606B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonateBook.app/DonateBook";
+			};
+			name = Debug;
+		};
+		84E25294269449FA003606B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBookTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DonateBook.app/DonateBook";
+			};
+			name = Release;
+		};
+		84E25296269449FA003606B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonateBook;
+			};
+			name = Debug;
+		};
+		84E25297269449FA003606B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DonateBookUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonateBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DonateBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84E2525B269449F9003606B2 /* Build configuration list for PBXProject "DonateBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E2528D269449FA003606B2 /* Debug */,
+				84E2528E269449FA003606B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E2528F269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E25290269449FA003606B2 /* Debug */,
+				84E25291269449FA003606B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E25292269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E25293269449FA003606B2 /* Debug */,
+				84E25294269449FA003606B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E25295269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E25296269449FA003606B2 /* Debug */,
+				84E25297269449FA003606B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84E2526E269449F9003606B2 /* DonateBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84E2526F269449F9003606B2 /* DonateBook.xcdatamodel */,
+			);
+			currentVersion = 84E2526F269449F9003606B2 /* DonateBook.xcdatamodel */;
+			path = DonateBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84E25258269449F9003606B2 /* Project object */;
+}
