@@ -9,6 +9,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class Model{
     static let instance = Model()
@@ -17,15 +18,25 @@ class Model{
     private init(){}
     var items = [Item]()
     
-    func getAllItems()->[Item]{
+    func getAllItems(callback:@escaping ([Item])->Void){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do{
-            let items = try context.fetch(Item.fetchRequest()) as! [Item]
-            return items
-            
-        }catch{
-            return [Item]()
+        let request = Item.fetchRequest() as NSFetchRequest<Item>
+        DispatchQueue.global().async {
+            var data = [Item]()
+            do{
+                data = try context.fetch(request)
+           }catch{
+               
+           }
+        DispatchQueue.main.async{
+                callback(data)
+                
+            }
         }
+        
+        
+        
+       
         
     }
     
@@ -47,6 +58,7 @@ class Model{
               catch{}
       
         }
+    
     
     
     

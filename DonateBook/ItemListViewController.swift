@@ -68,8 +68,12 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     
             override func viewWillAppear(_ animated: Bool) {
                 super.viewWillAppear(animated)
-                data = Model.instance.getAllItems()
-                ItemTableView.reloadData()
+                Model.instance.getAllItems { items in
+                    self.data = items
+                    self.ItemTableView.reloadData()
+                    
+                }
+            
             }
     
             func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
