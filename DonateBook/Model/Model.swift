@@ -8,32 +8,46 @@
 //
 
 import Foundation
+import UIKit
 
 class Model{
     static let instance = Model()
-    var items = [Item]()
+   
     
     private init(){}
+    var items = [Item]()
     
     func getAllItems()->[Item]{
-        return items
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do{
+            let items = try context.fetch(Item.fetchRequest()) as! [Item]
+            return items
+            
+        }catch{
+            return [Item]()
+        }
         
     }
     
     func add(item:Item){
-        items.append(item)
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do{
+        try context.save()
+        }
+        catch{}
     }
     
     func delete(item:Item){
-        var i = 0
-        for it in items{
-            if it.itemNumber == item.itemNumber{
-                items.remove(at: i)
-                return
-            }
-        i = i + 1
+           let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(item)
+        do{
+              try context.save()
+              }
+              catch{}
+      
         }
-    }
+    
     
     
     

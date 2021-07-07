@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+//var id:Int16 = 0
 class addDonateViewController: UIViewController {
-    var id = 0
+    
     //@IBOutlet weak var itemImg: UIImageView!
     //@IBOutlet weak var itemName: UITextField!
     //@IBOutlet weak var itemCategory: UITextField!
@@ -42,16 +42,19 @@ class addDonateViewController: UIViewController {
     
    
     @IBAction func saveItem(_ sender: Any) {
-        let item = Item()
+        let item = Item.create(itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: "")
+         //id = id+1
+        print(item.itemNumber)
                    
-        //todo id???, image
-        item.itemNumber = id
-        id = id+1
-        item.itemName = itemName.text
-        item.itemDescription = itemDescription.text
-        item.itemCategory = itemCategory.text
-        item.itemLocation = itemLocation.text
-        item.itemContact = itemContact.text
+        //todo  image
+        
+//        item.itemNumber = id
+//        id = id+1
+//        item.itemName = itemName.text
+//        item.itemDescription = itemDescription.text
+//        item.itemCategory = itemCategory.text
+//        item.itemLocation = itemLocation.text
+//        item.itemContact = itemContact.text
         Model.instance.add(item: item)
         
         navigationController?.popViewController(animated: true)
