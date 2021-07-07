@@ -16,6 +16,7 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemCategory: UILabel!
     @IBOutlet weak var itemDescription: UILabel!
     @IBOutlet weak var itemLocation: UILabel!
+    @IBOutlet weak var itemContact: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

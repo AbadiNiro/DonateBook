@@ -9,7 +9,21 @@
 import UIKit
 
 class addDonateViewController: UIViewController {
-
+    var id = 0
+    //@IBOutlet weak var itemImg: UIImageView!
+    //@IBOutlet weak var itemName: UITextField!
+    //@IBOutlet weak var itemCategory: UITextField!
+    //@IBOutlet weak var itemDescription: UITextField!
+    //@IBOutlet weak var itemLocation: UITextField!
+    
+    
+    @IBOutlet weak var itemName: UITextField!
+    @IBOutlet weak var itemImg: UIImageView!
+    @IBOutlet weak var itemLocation: UITextField!
+    @IBOutlet weak var itemCategory: UITextField!
+    @IBOutlet weak var itemDescription: UITextField!
+    @IBOutlet weak var itemContact: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,13 +31,46 @@ class addDonateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toAddDonateSegue"){
             print("dsas")
+            
         }
     }
+    
     @IBAction func backToMyDonations(segue: UIStoryboardSegue){
         print("Back to myDonation screen")
+        
     }
     
-
+   
+    @IBAction func saveItem(_ sender: Any) {
+        let item = Item()
+                   
+        //todo id???, image
+        item.itemNumber = id
+        id = id+1
+        item.itemName = itemName.text
+        item.itemDescription = itemDescription.text
+        item.itemCategory = itemCategory.text
+        item.itemLocation = itemLocation.text
+        item.itemContact = itemContact.text
+        Model.instance.add(item: item)
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+ /*   @IBAction func save(_ sender: Any){
+        let item = Item()
+        
+        // todo id???, image
+        item.itemNumber = id
+        id = id+1
+        item.itemName = itemName.text
+        item.itemDescription = itemDescription.text
+        item.itemCategory = itemCategory.text
+        item.itemLocation = itemLocation.text
+        Model.instance.add(item: item)
+        navigationController?.popViewController(animated: true)
+    }*/
+    
     /*
     // MARK: - Navigation
 

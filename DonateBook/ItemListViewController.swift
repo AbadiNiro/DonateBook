@@ -12,10 +12,15 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     @IBOutlet weak var ItemTableView: UITableView!
 
     var editingFlag = false
-    var data = [1,2,3,4,5,6,7,8,9]
+    var data = [Item]()
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func editButton(_ sender: Any) {
@@ -39,15 +44,19 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
         }
             
             func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                return 115
+                return 158
             }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = ItemTableView.dequeueReusableCell(withIdentifier: "itemListRow") as! ItemTableViewCell
-            cell.itemName.text = "item name"
-            cell.itemCategory.text = "chair"
-            cell.itemLocation.text = "north"
-            cell.itemDescription.text = "new"
+            
+            let item = data[indexPath.row]
+            cell.itemName.text = item.itemName
+            cell.itemCategory.text = item.itemCategory
+            cell.itemLocation.text = item.itemLocation
+            cell.itemDescription.text = item.itemDescription
+            cell.itemContact.text = item.itemContact
+            //cell.itemImg.image = item.imgUrl
             
             return cell
         }
@@ -56,13 +65,22 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
                 
             }
             
+    
+            override func viewWillAppear(_ animated: Bool) {
+                super.viewWillAppear(animated)
+                data = Model.instance.getAllItems()
+                ItemTableView.reloadData()
+            }
+    
             func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
                 editingFlag
             }
     
             func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                data.remove(at: 0)
+                let item = data[indexPath.row]
+                Model.instance.delete(item: item)
+                data.remove(at: indexPath.row)
                 // Delete the row from the data source
                 tableView.deleteRows(at: [indexPath], with: .fade)
             } else if editingStyle == .insert {
