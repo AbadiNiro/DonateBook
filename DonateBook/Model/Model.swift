@@ -13,55 +13,21 @@ import CoreData
 
 class Model{
     static let instance = Model()
-   
+    let modelFirebase = ModelFirebase()
     
     private init(){}
     var items = [Item]()
     
     func getAllItems(callback:@escaping ([Item])->Void){
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let request = Item.fetchRequest() as NSFetchRequest<Item>
-        DispatchQueue.global().async {
-            var data = [Item]()
-            do{
-                data = try context.fetch(request)
-           }catch{
-               
-           }
-        DispatchQueue.main.async{
-                callback(data)
-                
-            }
-        }
-        
-        
-        
-       
-        
+   
     }
     
     func add(item:Item){
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        do{
-        try context.save()
-        }
-        catch{}
     }
     
     func delete(item:Item){
-           let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        context.delete(item)
-        do{
-              try context.save()
-              }
-              catch{}
-      
+         
         }
-    
-    
-    
-    
-    
     
 }

@@ -32,3 +32,43 @@ public class Item: NSManagedObject {
     }
 
 }
+
+extension Item{
+   static func getAll(callback:@escaping ([Item])->Void){
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = Item.fetchRequest() as NSFetchRequest<Item>
+        DispatchQueue.global().async {
+            var data = [Item]()
+            do{
+                data = try context.fetch(request)
+           }catch{
+               
+           }
+        DispatchQueue.main.async{
+                callback(data)
+                
+            }
+        }
+        
+    }
+    
+    func save(){
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do{
+        try context.save()
+        }
+        catch{}
+    }
+    
+    func delete(){
+           let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(self)
+        do{
+              try context.save()
+              }
+              catch{}
+
+        }
+    
+}
