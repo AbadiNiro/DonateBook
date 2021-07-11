@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7B0E2BB30540EE10F2A77A /* Pods_DonateBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF3F63DE426C4A8C120F335 /* Pods_DonateBookTests.framework */; };
+		84613023269B0EBC00977CEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84613022269B0EBB00977CEF /* GoogleService-Info.plist */; };
+		84613042269B149E00977CEF /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84613041269B149E00977CEF /* ModelFirebase.swift */; };
 		84C2054B2695AF4D009272B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2054A2695AF4C009272B5 /* Model.swift */; };
 		84C2056B2695E1EE009272B5 /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C205692695E1EE009272B5 /* ItemModel.xcdatamodeld */; };
 		84C2056E2695E28D009272B5 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2056C2695E28D009272B5 /* Item+CoreDataClass.swift */; };
@@ -23,6 +26,8 @@
 		84E2529926945E6B003606B2 /* addDonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2529826945E6B003606B2 /* addDonateViewController.swift */; };
 		84E2529B26948C18003606B2 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2529A26948C18003606B2 /* ItemListViewController.swift */; };
 		84E2529D269496CA003606B2 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E2529C269496CA003606B2 /* ItemTableViewCell.swift */; };
+		A2F9A219E1B6FD912498F557 /* Pods_DonateBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A2862606E9A4252855A48F /* Pods_DonateBook.framework */; };
+		CF210F1A42F4D6744CCCEED0 /* Pods_DonateBook_DonateBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2FD69555E7CC20D3E8EF15A /* Pods_DonateBook_DonateBookUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C170BE8E1CDDB4F5EA46183 /* Pods-DonateBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook.debug.xcconfig"; path = "Target Support Files/Pods-DonateBook/Pods-DonateBook.debug.xcconfig"; sourceTree = "<group>"; };
+		84613022269B0EBB00977CEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84613041269B149E00977CEF /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		84C2054A2695AF4C009272B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		84C2056A2695E1EE009272B5 /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
 		84C2056C2695E28D009272B5 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -65,6 +73,14 @@
 		84E2529826945E6B003606B2 /* addDonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addDonateViewController.swift; sourceTree = "<group>"; };
 		84E2529A26948C18003606B2 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		84E2529C269496CA003606B2 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		A2571654CECA62002D27D617 /* Pods-DonateBook-DonateBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook-DonateBookUITests.release.xcconfig"; path = "Target Support Files/Pods-DonateBook-DonateBookUITests/Pods-DonateBook-DonateBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ACF3F63DE426C4A8C120F335 /* Pods_DonateBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B030B8EB31BB641E4F30A440 /* Pods-DonateBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBookTests.release.xcconfig"; path = "Target Support Files/Pods-DonateBookTests/Pods-DonateBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9A2862606E9A4252855A48F /* Pods_DonateBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2FD69555E7CC20D3E8EF15A /* Pods_DonateBook_DonateBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateBook_DonateBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6ACD62D1C4F06F58AC7218 /* Pods-DonateBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBookTests.debug.xcconfig"; path = "Target Support Files/Pods-DonateBookTests/Pods-DonateBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F63EB0DBF2790E9A972E0265 /* Pods-DonateBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook.release.xcconfig"; path = "Target Support Files/Pods-DonateBook/Pods-DonateBook.release.xcconfig"; sourceTree = "<group>"; };
+		F801E6D63346283EB9FEEB50 /* Pods-DonateBook-DonateBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook-DonateBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-DonateBook-DonateBookUITests/Pods-DonateBook-DonateBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F9A219E1B6FD912498F557 /* Pods_DonateBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7B0E2BB30540EE10F2A77A /* Pods_DonateBookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +104,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF210F1A42F4D6744CCCEED0 /* Pods_DonateBook_DonateBookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147D5F231B483B899AB3A0DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C9A2862606E9A4252855A48F /* Pods_DonateBook.framework */,
+				D2FD69555E7CC20D3E8EF15A /* Pods_DonateBook_DonateBookUITests.framework */,
+				ACF3F63DE426C4A8C120F335 /* Pods_DonateBookTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C2F559CF7B47144781BA86F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C170BE8E1CDDB4F5EA46183 /* Pods-DonateBook.debug.xcconfig */,
+				F63EB0DBF2790E9A972E0265 /* Pods-DonateBook.release.xcconfig */,
+				F801E6D63346283EB9FEEB50 /* Pods-DonateBook-DonateBookUITests.debug.xcconfig */,
+				A2571654CECA62002D27D617 /* Pods-DonateBook-DonateBookUITests.release.xcconfig */,
+				DF6ACD62D1C4F06F58AC7218 /* Pods-DonateBookTests.debug.xcconfig */,
+				B030B8EB31BB641E4F30A440 /* Pods-DonateBookTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84C205472695AE2C009272B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +141,7 @@
 				84C2056D2695E28D009272B5 /* Item+CoreDataProperties.swift */,
 				84C2054A2695AF4C009272B5 /* Model.swift */,
 				84C205692695E1EE009272B5 /* ItemModel.xcdatamodeld */,
+				84613041269B149E00977CEF /* ModelFirebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,10 +149,13 @@
 		84E25257269449F9003606B2 = {
 			isa = PBXGroup;
 			children = (
+				84613022269B0EBB00977CEF /* GoogleService-Info.plist */,
 				84E25262269449F9003606B2 /* DonateBook */,
 				84E2527E269449FA003606B2 /* DonateBookTests */,
 				84E25289269449FA003606B2 /* DonateBookUITests */,
 				84E25261269449F9003606B2 /* Products */,
+				1C2F559CF7B47144781BA86F /* Pods */,
+				147D5F231B483B899AB3A0DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84E2528F269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBook" */;
 			buildPhases = (
+				F85166D0B2045A047656842C /* [CP] Check Pods Manifest.lock */,
 				84E2525C269449F9003606B2 /* Sources */,
 				84E2525D269449F9003606B2 /* Frameworks */,
 				84E2525E269449F9003606B2 /* Resources */,
+				BA1F359B8A1FBA27733C2173 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84E25292269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookTests" */;
 			buildPhases = (
+				00083EE088642084E25357B3 /* [CP] Check Pods Manifest.lock */,
 				84E25277269449FA003606B2 /* Sources */,
 				84E25278269449FA003606B2 /* Frameworks */,
 				84E25279269449FA003606B2 /* Resources */,
@@ -202,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84E25295269449FA003606B2 /* Build configuration list for PBXNativeTarget "DonateBookUITests" */;
 			buildPhases = (
+				D6CAFCCD644A2FF05E40AD4D /* [CP] Check Pods Manifest.lock */,
 				84E25282269449FA003606B2 /* Sources */,
 				84E25283269449FA003606B2 /* Frameworks */,
 				84E25284269449FA003606B2 /* Resources */,
+				D9C0986F4ADBD60477EB2D72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E25275269449FA003606B2 /* LaunchScreen.storyboard in Resources */,
+				84613023269B0EBC00977CEF /* GoogleService-Info.plist in Resources */,
 				84E25272269449FA003606B2 /* Assets.xcassets in Resources */,
 				84E2526D269449F9003606B2 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +338,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00083EE088642084E25357B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonateBookTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA1F359B8A1FBA27733C2173 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DonateBook/Pods-DonateBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DonateBook/Pods-DonateBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DonateBook/Pods-DonateBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6CAFCCD644A2FF05E40AD4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonateBook-DonateBookUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9C0986F4ADBD60477EB2D72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DonateBook-DonateBookUITests/Pods-DonateBook-DonateBookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DonateBook-DonateBookUITests/Pods-DonateBook-DonateBookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DonateBook-DonateBookUITests/Pods-DonateBook-DonateBookUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F85166D0B2045A047656842C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DonateBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84E2525C269449F9003606B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +450,7 @@
 				84E2526A269449F9003606B2 /* SecondViewController.swift in Sources */,
 				84E2529B26948C18003606B2 /* ItemListViewController.swift in Sources */,
 				84E25268269449F9003606B2 /* FirstViewController.swift in Sources */,
+				84613042269B149E00977CEF /* ModelFirebase.swift in Sources */,
 				84C2056B2695E1EE009272B5 /* ItemModel.xcdatamodeld in Sources */,
 				84E25264269449F9003606B2 /* AppDelegate.swift in Sources */,
 				84C2054B2695AF4D009272B5 /* Model.swift in Sources */,
@@ -472,6 +628,7 @@
 		};
 		84E25290269449FA003606B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C170BE8E1CDDB4F5EA46183 /* Pods-DonateBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,6 +646,7 @@
 		};
 		84E25291269449FA003606B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63EB0DBF2790E9A972E0265 /* Pods-DonateBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +664,7 @@
 		};
 		84E25293269449FA003606B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6ACD62D1C4F06F58AC7218 /* Pods-DonateBookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +686,7 @@
 		};
 		84E25294269449FA003606B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B030B8EB31BB641E4F30A440 /* Pods-DonateBookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +708,7 @@
 		};
 		84E25296269449FA003606B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F801E6D63346283EB9FEEB50 /* Pods-DonateBook-DonateBookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -567,6 +728,7 @@
 		};
 		84E25297269449FA003606B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2571654CECA62002D27D617 /* Pods-DonateBook-DonateBookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
