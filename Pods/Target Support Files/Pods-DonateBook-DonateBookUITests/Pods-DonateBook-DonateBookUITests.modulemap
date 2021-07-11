@@ -1,0 +1,6 @@
+framework module Pods_DonateBook_DonateBookUITests {
+  umbrella header "Pods-DonateBook-DonateBookUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
