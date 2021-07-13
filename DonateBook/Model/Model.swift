@@ -19,15 +19,15 @@ class Model{
     var items = [Item]()
     
     func getAllItems(callback:@escaping ([Item])->Void){
-   
+        modelFirebase.getAllItems(callback: callback)
     }
     
     func add(item:Item){
-        
+        modelFirebase.add(item: item, callback: <#T##() -> Void#>)
     }
     
     func delete(item:Item){
-         
+        modelFirebase.delete(item: item)
         }
     
 }

@@ -1,27 +1,25 @@
 //
 //  Item+CoreDataClass.swift
-//  DonateBook
+//  
 //
-//  Created by admin on 07/07/2021.
-//  Copyright © 2021 donatebook. All rights reserved.
+//  Created by admin on 13/07/2021.
 //
 //
 
 import Foundation
 import CoreData
 import UIKit
-var id:Int16 = 0
+
 @objc(Item)
 public class Item: NSManagedObject {
     
     
     static func create( itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String)->Item{
         
-          let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let item = Item(context: context)
-        item.itemNumber = id
-        id = id+1
+        item.itemNumber = " "
         item.itemName = itemName
         item.itemCategory = itemCategory
         item.itemContact = itemContact
@@ -30,6 +28,36 @@ public class Item: NSManagedObject {
         item.imgUrl = imgUrl
         return item
     }
+    static func create(json:[String:Any])->Item?{
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+      
+        let item = Item(context: context)
+        item.itemNumber = json["itemNumber"] as? String
+        item.itemName = json["itemName"]as? String
+        item.itemCategory = json["itemCategory"]as? String
+        item.itemContact = json["itemContact"]as? String
+        item.itemLocation = json["itemLocation"]as? String
+        item.itemDescription = json["itemDescription"]as? String
+        item.imgUrl = json["imgUrl"]as? String
+        
+        return item
+    }
+    
+    
+    func toJson()->[String:Any]{
+          var json = [String:Any]()
+          json["itemName"] = itemName!
+          json["itemCategory"] = itemCategory!
+          json["itemContact"] = itemContact!
+          json["itemLocation"] = itemLocation!
+          json["itemDescription"] = itemDescription!
+          if let imgUrl = imgUrl {
+              json["imgUrl"] = imgUrl
+          }else{
+              json["imgUrl"] = ""
+          }
+          return json
+      }
 
 }
 
@@ -72,3 +100,4 @@ extension Item{
         }
     
 }
+
