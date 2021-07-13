@@ -44,7 +44,7 @@ class addDonateViewController: UIViewController {
     @IBAction func saveItem(_ sender: Any) {
         let item = Item.create(itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: "")
          //id = id+1
-        print(item.itemNumber)
+        //print(item.itemNumber)
                    
         //todo  image
         
@@ -55,9 +55,8 @@ class addDonateViewController: UIViewController {
 //        item.itemCategory = itemCategory.text
 //        item.itemLocation = itemLocation.text
 //        item.itemContact = itemContact.text
-        Model.instance.add(item: item)
+        Model.instance.add(item: item ,callback: { self.navigationController?.popViewController(animated: true)})
         
-        navigationController?.popViewController(animated: true)
     }
     
  /*   @IBAction func save(_ sender: Any){

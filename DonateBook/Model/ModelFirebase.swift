@@ -50,21 +50,13 @@ class ModelFirebase{
                         item.itemNumber = ref?.documentID
                         
                     }
-            callback()
-                
+            
+                callback()
                 }
             }
     
-    func delete(item:Item){
-        let db = Firestore.firestore()
-        
-        db.collection("items").document(item.itemNumber!).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
-            }
-        }
-        }
-    
+    func delete(item:Item,callback: @escaping ()->Void ){
+     
+    }
+
 }
