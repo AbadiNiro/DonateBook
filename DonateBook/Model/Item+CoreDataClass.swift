@@ -14,12 +14,12 @@ import UIKit
 public class Item: NSManagedObject {
     
     
-    static func create( itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String)->Item{
+    static func create(itemNumber:String ,  itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String)->Item{
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let item = Item(context: context)
-        item.itemNumber = ""
+        item.itemNumber = itemNumber
         item.itemName = itemName
         item.itemCategory = itemCategory
         item.itemContact = itemContact
@@ -32,7 +32,7 @@ public class Item: NSManagedObject {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
       
         let item = Item(context: context)
-        //item.itemNumber = json["itemNumber"] as? String
+        item.itemNumber = json["itemNumber"] as? String
         item.itemName = json["itemName"]as? String
         item.itemCategory = json["itemCategory"]as? String
         item.itemContact = json["itemContact"]as? String

@@ -10,10 +10,12 @@
 		0A7B0E2BB30540EE10F2A77A /* Pods_DonateBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF3F63DE426C4A8C120F335 /* Pods_DonateBookTests.framework */; };
 		84613023269B0EBC00977CEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84613022269B0EBB00977CEF /* GoogleService-Info.plist */; };
 		84613042269B149E00977CEF /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84613041269B149E00977CEF /* ModelFirebase.swift */; };
+		84B5BE38269F3D640088401E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */; };
+		84B5BE3A269F3D790088401E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */; };
+		84B5BE3E269F572E0088401E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE3D269F572E0088401E /* SignUpViewController.swift */; };
+		84B5BE40269F58D50088401E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE3F269F58D50088401E /* SignInViewController.swift */; };
 		84C2054B2695AF4D009272B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2054A2695AF4C009272B5 /* Model.swift */; };
 		84C2E617269D97E8003CC0A5 /* ItemModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E615269D97E8003CC0A5 /* ItemModel.xcdatamodeld */; };
-		84C2E61C269D985C003CC0A5 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E61B269D985C003CC0A5 /* Item+CoreDataClass.swift */; };
-		84C2E621269D9864003CC0A5 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2E620269D9864003CC0A5 /* Item+CoreDataProperties.swift */; };
 		84E25264269449F9003606B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25263269449F9003606B2 /* AppDelegate.swift */; };
 		84E25266269449F9003606B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25265269449F9003606B2 /* SceneDelegate.swift */; };
 		84E25268269449F9003606B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E25267269449F9003606B2 /* FirstViewController.swift */; };
@@ -51,10 +53,12 @@
 		0C170BE8E1CDDB4F5EA46183 /* Pods-DonateBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook.debug.xcconfig"; path = "Target Support Files/Pods-DonateBook/Pods-DonateBook.debug.xcconfig"; sourceTree = "<group>"; };
 		84613022269B0EBB00977CEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84613041269B149E00977CEF /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84B5BE3D269F572E0088401E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84B5BE3F269F58D50088401E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		84C2054A2695AF4C009272B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		84C2E616269D97E8003CC0A5 /* ItemModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ItemModel.xcdatamodel; sourceTree = "<group>"; };
-		84C2E61B269D985C003CC0A5 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "/Users/admin/Desktop/DonateBook/DonateBook/Model/Item+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		84C2E620269D9864003CC0A5 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "/Users/admin/Desktop/DonateBook/DonateBook/Model/Item+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		84E25260269449F9003606B2 /* DonateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E25263269449F9003606B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E25265269449F9003606B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,8 +141,8 @@
 		84C205472695AE2C009272B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84C2E61B269D985C003CC0A5 /* Item+CoreDataClass.swift */,
-				84C2E620269D9864003CC0A5 /* Item+CoreDataProperties.swift */,
+				84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */,
+				84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */,
 				84C2054A2695AF4C009272B5 /* Model.swift */,
 				84613041269B149E00977CEF /* ModelFirebase.swift */,
 				84C2E615269D97E8003CC0A5 /* ItemModel.xcdatamodeld */,
@@ -184,6 +188,8 @@
 				84E2529826945E6B003606B2 /* addDonateViewController.swift */,
 				84E2529A26948C18003606B2 /* ItemListViewController.swift */,
 				84E2529C269496CA003606B2 /* ItemTableViewCell.swift */,
+				84B5BE3D269F572E0088401E /* SignUpViewController.swift */,
+				84B5BE3F269F58D50088401E /* SignInViewController.swift */,
 			);
 			path = DonateBook;
 			sourceTree = "<group>";
@@ -446,17 +452,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B5BE40269F58D50088401E /* SignInViewController.swift in Sources */,
 				84E2526A269449F9003606B2 /* SecondViewController.swift in Sources */,
 				84E2529B26948C18003606B2 /* ItemListViewController.swift in Sources */,
 				84C2E617269D97E8003CC0A5 /* ItemModel.xcdatamodeld in Sources */,
 				84E25268269449F9003606B2 /* FirstViewController.swift in Sources */,
+				84B5BE38269F3D640088401E /* Item+CoreDataClass.swift in Sources */,
 				84613042269B149E00977CEF /* ModelFirebase.swift in Sources */,
-				84C2E61C269D985C003CC0A5 /* Item+CoreDataClass.swift in Sources */,
-				84C2E621269D9864003CC0A5 /* Item+CoreDataProperties.swift in Sources */,
+				84B5BE3A269F3D790088401E /* Item+CoreDataProperties.swift in Sources */,
 				84E25264269449F9003606B2 /* AppDelegate.swift in Sources */,
 				84C2054B2695AF4D009272B5 /* Model.swift in Sources */,
 				84E2529D269496CA003606B2 /* ItemTableViewCell.swift in Sources */,
 				84E2529926945E6B003606B2 /* addDonateViewController.swift in Sources */,
+				84B5BE3E269F572E0088401E /* SignUpViewController.swift in Sources */,
 				84E25266269449F9003606B2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

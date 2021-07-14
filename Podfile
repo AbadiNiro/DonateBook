@@ -10,6 +10,9 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
+pod 'Firebase/Core'
 
   target 'DonateBookTests' do
     inherit! :search_paths
