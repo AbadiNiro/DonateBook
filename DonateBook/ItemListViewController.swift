@@ -83,12 +83,10 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             if editingStyle == .delete {
                 let item = data[indexPath.row]
                 Model.instance.delete(item: item)
-                {
-                    self.data.remove(at: indexPath.row)
-                print("deleted " + item.itemNumber!)
+                data.remove(at: indexPath.row)
              //   data.remove(at: indexPath.row)
                 // Delete the row from the data source
-                    tableView.deleteRows(at: [indexPath], with: .fade)}
+                    tableView.deleteRows(at: [indexPath], with: .fade)
             } else if editingStyle == .insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }

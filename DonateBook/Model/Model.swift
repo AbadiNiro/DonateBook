@@ -23,11 +23,11 @@ class Model{
     }
     
     func add(item:Item,callback: @escaping ()->Void){
-        modelFirebase.add(item:item,callback:callback)
+        modelFirebase.add(item:item, callback:callback)
     }
     
-    func delete(item:Item,callback: @escaping ()->Void ){
-        modelFirebase.delete(item: item,callback:callback)
+    func delete(item:Item){
+        modelFirebase.delete(item: item)
     }
     
 }

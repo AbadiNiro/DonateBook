@@ -37,26 +37,26 @@ class ModelFirebase{
     }
     
     func add(item:Item,callback: @escaping ()->Void ){
-                var ref: DocumentReference? = nil
-                let db = Firestore.firestore()
-        ref =   db.collection("items").addDocument(data: item.toJson()){
-                    err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    }else{
-                        print("Document successfully written! \(ref!.documentID)")
-                        db.collection("items").document(ref?.documentID ?? "1").setData(["itemNumber":ref?.documentID as Any], merge : true)
-                        
-                        item.itemNumber = ref?.documentID
-                        
-                    }
-            
-                callback()
-                }
-            }
+             let db = Firestore.firestore()
+        db.collection("items").document(item.itemNumber!).setData(item.toJson()){
+                          err in
+                          if let err = err {
+                              print("Error writing document: \(err)")
+                          }else{
+                              print("Document successfully written!")
+                          }
+                      }
+                  }
     
-    func delete(item:Item,callback: @escaping ()->Void ){
-     
+    func delete(item:Item){
+        let db = Firestore.firestore()
+        db.collection("items").document(item.itemNumber!).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document removed")
+            }
+        }
     }
 
 }

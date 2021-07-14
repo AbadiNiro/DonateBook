@@ -42,7 +42,13 @@ class addDonateViewController: UIViewController {
     
    
     @IBAction func saveItem(_ sender: Any) {
-        let item = Item.create(itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: "")
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd-HH:mm:ss:ms"
+        let timeStamp = format.string(from:date)
+                
+        var item = Item.create(itemNumber:timeStamp ,itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: "")
+        
          //id = id+1
         //print(item.itemNumber)
                    
@@ -55,8 +61,9 @@ class addDonateViewController: UIViewController {
 //        item.itemCategory = itemCategory.text
 //        item.itemLocation = itemLocation.text
 //        item.itemContact = itemContact.text
-        Model.instance.add(item: item ,callback: { self.navigationController?.popViewController(animated: true)})
-        
+          Model.instance.add(item: item ,callback: { self.navigationController?.popViewController(animated: true)})
+          //print ("bla" + item.itemNumber!)
+    
     }
     
  /*   @IBAction func save(_ sender: Any){
