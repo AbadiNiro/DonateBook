@@ -14,13 +14,14 @@ import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Use Firebase library to configure APIs
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
+    
 
         
         return true
@@ -28,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-
+   
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

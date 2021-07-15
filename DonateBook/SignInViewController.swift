@@ -7,8 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Firebase
-
 class SignInViewController: UIViewController {
 
     
@@ -19,17 +19,37 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         // Do any additional setup after loading the view.
     }
     
     @IBAction func didTapLogin(_ sender: Any) {
         
-        Auth.auth().signIn(withEmail: userName.text!, password: passWord.text!) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
+        FirebaseAuth.Auth.auth().signIn(withEmail: userName.text!, password: passWord.text!) { [weak self] authResult, error in
+            
+        /*  guard let strongSelf = self else {
+            
+               return     }
           // ...
+            guard error == nil else {print("a")
+                return}
+            
+             print ("right customer")
+            
+        }*/
+            if error != nil {print ("a")}
+            else {
+                let registeredZone = self?.storyboard?.instantiateViewController(withIdentifier:"registerZone")
+                
+                self?.view.window?.rootViewController = registeredZone
+                self?.view.window?.makeKeyAndVisible()
+            }
+            
+            
         }
         
     }
+    
     
     /*
     // MARK: - Navigation

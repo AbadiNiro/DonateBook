@@ -80,7 +80,7 @@
         <!--My Donations-->
         <scene sceneID="7Fw-ok-HYZ">
             <objects>
-                <viewController id="7Np-xb-n8B" customClass="ItemListViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerZone" id="7Np-xb-n8B" customClass="ItemListViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7M-X5-2EF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyG-tw-eSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-513.04347826086962" y="1095.5357142857142"/>
+            <point key="canvasLocation" x="-438" y="1398"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="AWl-4y-3b4">
@@ -462,7 +462,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login as a guest"/>
                                 <connections>
-                                    <segue destination="aMq-qs-En1" kind="presentation" id="AZN-MF-mV2"/>
+                                    <segue destination="4Wj-B2-vx4" kind="show" id="nnr-Vr-x7C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNW-Xc-Ry8">
@@ -493,24 +493,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBo-r5-iaZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="RAp-r8-AaQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-3533" y="400"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TFT-Mr-Bxl">
-            <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="aMq-qs-En1" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="0Ci-hh-gEU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WlC-Ph-XHo">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="4Wj-B2-vx4" kind="relationship" relationship="rootViewController" id="nC0-y7-HQu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ECv-3S-G8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2626" y="-38"/>
+            <point key="canvasLocation" x="-3597" y="544"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

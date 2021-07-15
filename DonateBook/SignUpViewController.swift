@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -19,10 +19,21 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var Pass2: UITextField!
     
     @IBAction func didTapRegister(_ sender: Any) {
-        Auth.auth().createUser(withEmail: Email.text!, password: Pass.text!) { authResult, error in
-                  // ...
-             }
+        FirebaseAuth.Auth.auth().createUser(withEmail: Email.text!, password: Pass.text!) { authResult, error in
+            if let err = error{
+               print("create failed")   }
+            else{
+               print("create success")
+                
+                            }
+            
+        }
+         self.navigationController?.popViewController(animated: true)
+        
+        
     }
+     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

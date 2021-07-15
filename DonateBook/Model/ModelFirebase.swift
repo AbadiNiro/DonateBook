@@ -11,8 +11,7 @@ import Firebase
 
 class ModelFirebase{
     init(){
-        FirebaseApp.configure()
-           
+        //FirebaseApp.configure()
     }
     
     func getAllItems(callback:@escaping ([Item])->Void){
