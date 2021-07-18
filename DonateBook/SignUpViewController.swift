@@ -19,21 +19,21 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var Pass2: UITextField!
     
     @IBAction func didTapRegister(_ sender: Any) {
-        FirebaseAuth.Auth.auth().createUser(withEmail: Email.text!, password: Pass.text!) { authResult, error in
-            if let err = error{
-               print("create failed")   }
-            else{
-               print("create success")
+        //TODO alert
+        if(Pass.text! == Pass2.text!){
+            FirebaseAuth.Auth.auth().createUser(withEmail: Email.text!, password: Pass.text!) { authResult, error in
+                if let err = error{
+                   print("create failed")
+                }
+                else{
+                   print("create success")
+                }
                 
-                            }
-            
+            }
+            self.navigationController?.popViewController(animated: true)
         }
-         self.navigationController?.popViewController(animated: true)
-        
-        
     }
-     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
