@@ -116,6 +116,19 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }
         }
+    @IBAction func didTapSignOut(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+        print("signout succeeded")
+        self.performSegue(withIdentifier: "tapSignOut", sender: self)
+        
+        
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+    }
             /*
     // MARK: - Navigation
 

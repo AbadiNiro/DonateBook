@@ -37,20 +37,31 @@ class SignInViewController: UIViewController {
              print ("right customer")
             
         }*/
+            //TODO alert window
             if error != nil {print ("login failed")}
             else {
                 print("login succeeded")
+                /*
                 let registeredZone = self?.storyboard?.instantiateViewController(withIdentifier:"registerZone")
                 
                 self?.view.window?.rootViewController = registeredZone
-                self?.view.window?.makeKeyAndVisible()
+                self?.view.window?.makeKeyAndVisible()*/
+                
+                //
+                self?.performSegue(withIdentifier: "tapLogin", sender: self)
             }
             
             
         }
         
     }
+    @IBAction func backToWelcome(segue : UIStoryboardSegue){
+        print("exit")
+        
+    }
     
+    
+
     
     /*
     // MARK: - Navigation
