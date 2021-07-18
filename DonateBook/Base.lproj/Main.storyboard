@@ -642,6 +642,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="gLL-3G-Ow5"/>
+                    <connections>
+                        <outlet property="categoryText" destination="uVh-Gx-FfI" id="pul-ai-PVQ"/>
+                        <outlet property="locationText" destination="Ym6-Fh-efg" id="D97-du-eO2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1w5-Hr-Wfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

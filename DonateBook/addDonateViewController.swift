@@ -24,8 +24,29 @@ class addDonateViewController: UIViewController {
     @IBOutlet weak var itemDescription: UITextField!
     @IBOutlet weak var itemContact: UITextField!
     
+    var pickerViewCategories = UIPickerView()
+    var pickerViewLocations = UIPickerView()
+    
+    var categories = ["Furniture","Kitchen","Outdoor","Cloth","Shoes","Electronics","Sport equipment","Art","Cosmetics"]
+    
+    var locations = ["North","Center","South","Jerusalem","Hasharon","East Bank"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickerViewCategories.delegate = self
+        pickerViewCategories.dataSource = self
+        
+        pickerViewLocations.delegate = self
+        pickerViewLocations.dataSource = self
+        
+        
+        itemCategory.inputView = pickerViewCategories
+        itemLocation.inputView = pickerViewLocations
+            
+        
+        pickerViewCategories.tag = 1
+        pickerViewLocations.tag = 2
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -90,4 +111,50 @@ class addDonateViewController: UIViewController {
     }
     */
 
+    }
+
+extension addDonateViewController:UIPickerViewDelegate , UIPickerViewDataSource{
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (pickerView.tag == 1){
+            return categories.count
+        }
+        else{
+            return locations.count
+        }
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView.tag == 1){
+            return categories[row]
+        }
+        else{
+            return locations[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView.tag == 1){
+            itemCategory.text = categories[row]
+            itemCategory.resignFirstResponder()
+        }
+        else{
+            itemLocation.text = locations[row]
+            itemLocation.resignFirstResponder()
+        }
+        
+        
+    
+    }
+    
+        
+        
+        
+        
+        
     }
