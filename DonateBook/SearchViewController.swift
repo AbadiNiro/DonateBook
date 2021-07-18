@@ -15,9 +15,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var locationText: UITextField!
     
     
-    var categories = ["Furniture","Kitchen","Outdoor","Cloth","Shoes","Electronics","Sport equipment","Art","Cosmetics"]
+    var categories = ["None","Furniture","Kitchen","Outdoor","Cloth","Shoes","Electronics","Sport equipment","Art","Cosmetics"]
     
-    var locations = ["North","Center","South","Jerusalem","Hasharon","East Bank"]
+    var locations = ["None","North","Center","South","Jerusalem","Hasharon","East Bank"]
     
     var pickerViewCategories = UIPickerView()
     var pickerViewLocations = UIPickerView()
@@ -42,8 +42,18 @@ class SearchViewController: UIViewController {
         pickerViewCategories.tag = 1
         pickerViewLocations.tag = 2
     }
-}
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "tapSearch"){
+            let stbvc = segue.destination as! SearchTabBarViewController
+            stbvc.categoryForSearch = categoryText.text!
+            stbvc.locationForSearch = locationText.text!
+        }
+        
+        
+    }
+   
+}
 extension SearchViewController:UIPickerViewDelegate , UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -99,5 +109,4 @@ extension SearchViewController:UIPickerViewDelegate , UIPickerViewDataSource{
         // Pass the selected object to the new view controller.
     }
     */
-
 

@@ -11,13 +11,16 @@ import UIKit
 class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     
     @IBOutlet weak var searchTableView: UITableView!
-    
+    //var categoryForSearch = String()
+    //var locationForSearch = String()
     var data = [Item]()
-    
-    
+    var categorySearchResult = String()
+    var locationSearchResult = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       
+        print(categorySearchResult + locationSearchResult)
     }
     
     //UITableViewDelegate
@@ -53,8 +56,34 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Model.instance.getAllItems { items in
-            self.data = items
-            self.searchTableView.reloadData()
+            
+        
+        var filtered = [Item]()
+            
+        for item in items{
+            
+            if(self.categorySearchResult == "" || self.categorySearchResult == "None" && self.locationSearchResult == "" || self.locationSearchResult == "None"){
+                filtered.append(item)
+            }
+            if(self.categorySearchResult != "" || self.categorySearchResult != "None" && self.locationSearchResult == "" || self.locationSearchResult != "None"){
+                if (self.categorySearchResult == item.itemCategory){
+                    filtered.append(item)
+                }
+            }
+            if(self.categorySearchResult == "" || self.categorySearchResult == "None" && self.locationSearchResult != "" || self.locationSearchResult != "None"){
+                if (self.locationSearchResult == item.itemLocation){
+                    filtered.append(item)
+                }
+            }
+            else{
+                if (self.locationSearchResult == item.itemLocation && self.categorySearchResult == item.itemCategory){
+                    filtered.append(item)
+                }
+            }
+                
+            }
+        self.data = filtered
+        self.searchTableView.reloadData()
             }
             
         }
@@ -62,7 +91,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     
-    }
+}
 
 
 

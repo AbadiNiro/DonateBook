@@ -562,11 +562,11 @@
             </objects>
             <point key="canvasLocation" x="-3597" y="447"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Search Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-                <tabBarController modalPresentationStyle="fullScreen" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="49e-Tb-3d3" customClass="SearchTabBarViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="O2T-zl-cY6"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -634,7 +634,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="CiX-1r-fNN"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" identifier="tapSearch" id="CiX-1r-fNN"/>
                                 </connections>
                             </button>
                         </subviews>
