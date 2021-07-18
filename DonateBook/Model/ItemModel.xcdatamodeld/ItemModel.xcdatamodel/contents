@@ -8,8 +8,9 @@
         <attribute name="itemLocation" optional="YES" attributeType="String"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="itemNumber" optional="YES" attributeType="String"/>
+        <attribute name="userUID" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-45" positionY="0" width="128" height="148"/>
+        <element name="Item" positionX="-45" positionY="0" width="128" height="163"/>
     </elements>
 </model>

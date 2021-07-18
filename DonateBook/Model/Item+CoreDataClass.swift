@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import UIKit
+import FirebaseAuth
 
 @objc(Item)
 public class Item: NSManagedObject {
@@ -26,6 +27,23 @@ public class Item: NSManagedObject {
         item.itemLocation = itemLocation
         item.itemDescription = itemDescription
         item.imgUrl = imgUrl
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+          // The user's ID, unique to the Firebase project.
+          // Do NOT use this value to authenticate with your backend server,
+          // if you have one. Use getTokenWithCompletion:completion: instead.
+          let uid = user.uid
+          let email = user.email
+          let photoURL = user.photoURL
+          var multiFactorString = "MultiFactor: "
+          for info in user.multiFactor.enrolledFactors {
+            multiFactorString += info.displayName ?? "[DispayName]"
+            multiFactorString += " "
+          }
+            item.userUID = user.uid
+        }
+        
         return item
     }
     static func create(json:[String:Any])->Item?{
@@ -39,6 +57,8 @@ public class Item: NSManagedObject {
         item.itemLocation = json["itemLocation"]as? String
         item.itemDescription = json["itemDescription"]as? String
         item.imgUrl = json["imgUrl"]as? String
+        item.userUID = json["userUID"]as? String
+       
         
         return item
     }
@@ -57,6 +77,22 @@ public class Item: NSManagedObject {
           }else{
               json["imgUrl"] = " "
           }
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+          // The user's ID, unique to the Firebase project.
+          // Do NOT use this value to authenticate with your backend server,
+          // if you have one. Use getTokenWithCompletion:completion: instead.
+          let uid = user.uid
+          let email = user.email
+          let photoURL = user.photoURL
+          var multiFactorString = "MultiFactor: "
+          for info in user.multiFactor.enrolledFactors {
+            multiFactorString += info.displayName ?? "[DispayName]"
+            multiFactorString += " "
+          }
+            json["userUID"] = user.uid
+        }
           return json
       }
 

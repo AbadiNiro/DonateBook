@@ -23,5 +23,8 @@ extension Item {
     @NSManaged public var itemCategory: String?
     @NSManaged public var itemContact: String?
     @NSManaged public var imgUrl: String?
+    @NSManaged public var userUID: String?
+
+    
 
 }

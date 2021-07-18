@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ItemListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var ItemTableView: UITableView!
@@ -68,11 +69,35 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             override func viewWillAppear(_ animated: Bool) {
                 super.viewWillAppear(animated)
                 Model.instance.getAllItems { items in
-                    self.data = items
+                    
+                    let user = Auth.auth().currentUser
+                    if let user = user {
+                      // The user's ID, unique to the Firebase project.
+                      // Do NOT use this value to authenticate with your backend server,
+                      // if you have one. Use getTokenWithCompletion:completion: instead.
+                      let uid = user.uid
+                      let email = user.email
+                      let photoURL = user.photoURL
+                      var multiFactorString = "MultiFactor: "
+                      for info in user.multiFactor.enrolledFactors {
+                        multiFactorString += info.displayName ?? "[DispayName]"
+                        multiFactorString += " "
+                      }
+                    
+                    
+                    
+                    
+                    var filtered = [Item]()
+                    for item in items{
+                        if(user.uid == item.userUID){
+                            filtered.append(item)
+                        }
+                    }
+                    self.data = filtered
                     self.ItemTableView.reloadData()
                     
                 }
-            
+                }
             }
     
             func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

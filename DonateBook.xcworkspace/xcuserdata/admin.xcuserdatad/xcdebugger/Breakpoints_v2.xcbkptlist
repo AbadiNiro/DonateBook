@@ -46,8 +46,8 @@
             filePath = "DonateBook/ItemListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "tableView(_:commit:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,7 +68,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2AD60CC2-6688-494D-98B7-74F03A8FB6C7 - 2e8a66fcd180ec37"
+                  uuid = "2AD60CC2-6688-494D-98B7-74F03A8FB6C7 - 9a3b31ec891c2ed4"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -83,7 +83,7 @@
                   offsetFromSymbolStart = "123">
                </Location>
                <Location
-                  uuid = "2AD60CC2-6688-494D-98B7-74F03A8FB6C7 - dc867160fa82bc9a"
+                  uuid = "2AD60CC2-6688-494D-98B7-74F03A8FB6C7 - 68372670a21e7e58"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -177,6 +177,22 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "didTapRegister(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DEB031F-E70C-4C6B-AEFC-4F6FDD3BB42E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DonateBook/ItemListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

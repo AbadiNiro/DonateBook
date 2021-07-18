@@ -37,8 +37,9 @@ class SignInViewController: UIViewController {
              print ("right customer")
             
         }*/
-            if error != nil {print ("a")}
+            if error != nil {print ("login failed")}
             else {
+                print("login succeeded")
                 let registeredZone = self?.storyboard?.instantiateViewController(withIdentifier:"registerZone")
                 
                 self?.view.window?.rootViewController = registeredZone
