@@ -14,11 +14,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
 
     var editingFlag = false
     var data = [Item]()
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // get all from viewWillAppear
@@ -105,8 +101,9 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             
     
             override func viewWillAppear(_ animated: Bool) {
-                // comment this code?
                 super.viewWillAppear(animated)
+                // comment?
+                /*
                 Model.instance.getAllItems { items in
                     
                     let user = Auth.auth().currentUser
@@ -137,6 +134,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
                     
                 }
                 }
+                */
             }
     
             func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

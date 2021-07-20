@@ -24,11 +24,16 @@ class Model{
     }
     
     func add(item:Item,callback: @escaping ()->Void){
-        modelFirebase.add(item:item, callback:callback)
+        modelFirebase.add(item: item, callback: callback)
+        /*{
+            NotificationCenter.default.post(name: NSNotification.Name(Model.notificationItemList), object: self)
+        }*/
+            
+        
     }
     
     func delete(item:Item){
-        modelFirebase.delete(item: item)
+        modelFirebase.delete(item: item, callback: callback)
     }
     
 }

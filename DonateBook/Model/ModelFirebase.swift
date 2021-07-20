@@ -36,18 +36,19 @@ class ModelFirebase{
     }
     
     func add(item:Item,callback: @escaping ()->Void ){
-             let db = Firestore.firestore()
+        let db = Firestore.firestore()
         db.collection("items").document(item.itemNumber!).setData(item.toJson()){
-                          err in
-                          if let err = err {
-                              print("Error writing document: \(err)")
-                          }else{
-                              print("Document successfully written!")
-                          }
-                      }
-                  }
+            err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            }else{
+                print("Document successfully written!")
+            }
+            callback()
+        }
+    }
     
-    func delete(item:Item){
+    func delete(item:Item, callback: @escaping ()->Void ){
         let db = Firestore.firestore()
         db.collection("items").document(item.itemNumber!).delete() { err in
             if let err = err {
@@ -56,6 +57,7 @@ class ModelFirebase{
                 print("Document removed")
             }
         }
+        callback()
     }
 
 }
