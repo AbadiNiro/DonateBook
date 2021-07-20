@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 import UIKit
 import FirebaseAuth
+import Kingfisher
+
 
 @objc(Item)
 public class Item: NSManagedObject {
@@ -137,22 +139,24 @@ extension Item{
         }
     
     static func itemCell (_ tableView: UITableView, cellForRowAt indexPath: IndexPath, identifier:String, data:[Item])->UITableViewCell{
-         let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ItemTableViewCell
-                   
-                   let item = data[indexPath.row]
-                   cell.itemName.text = item.itemName
-                   cell.itemCategory.text = item.itemCategory
-                   cell.itemLocation.text = item.itemLocation
-                   cell.itemDescription.text = item.itemDescription
-                   cell.itemContact.text = item.itemContact
-                   //cell.itemImg.image = item.imgUrl
         
-                  let url = item.imgUrl
-                    
-                   
-                   return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! ItemTableViewCell
+        let item = data[indexPath.row]
+        cell.itemName.text = item.itemName
+        cell.itemCategory.text = item.itemCategory
+        cell.itemLocation.text = item.itemLocation
+        cell.itemDescription.text = item.itemDescription
+        cell.itemContact.text = item.itemContact
+        //cell.itemImg.image = item.imgUrl
+        let url = item.imgUrl
         
-        }
+        // check
+        let url1 = URL(string: String(url!))
+        cell.itemImg.kf.setImage(with:url1)
+
+        return cell
+        
+    }
     
 }
 

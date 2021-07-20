@@ -17,7 +17,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var categorySearchResult = String()
     var locationSearchResult = String()
     
-    //asaf
+   
     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
-    //asaf
+    
     
     @objc func refresh (_ sender : AnyObject){
         self.reloadData()
@@ -111,7 +111,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // asaf
+        
         /*
         Model.instance.getAllItems { items in
             

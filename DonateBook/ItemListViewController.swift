@@ -84,15 +84,11 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             return data.count
         }
             
-            func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                return 158
-            }
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 158
+        }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-    
-            
-            
             return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "itemListRow",data:data)
         }
     

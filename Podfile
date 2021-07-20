@@ -13,6 +13,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
 pod 'Firebase/Core'
+pod 'Kingfisher', '~>6.0'
 
   target 'DonateBookTests' do
     inherit! :search_paths
