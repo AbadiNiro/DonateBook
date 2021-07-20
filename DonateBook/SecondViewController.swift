@@ -16,11 +16,65 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
     var data = [Item]()
     var categorySearchResult = String()
     var locationSearchResult = String()
+    
+    //asaf
+    var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
         print(categorySearchResult + locationSearchResult)
+        
+        //asaf
+        searchTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
+        reloadData()
+        Model.instance.notificationItemList.observe {
+            self.reloadData()
+        }
+        
+    }
+    
+    //asaf
+    
+    @objc func refresh (_ sender : AnyObject){
+        self.reloadData()
+    }
+    
+    
+    func reloadData(){
+        //spiner?
+        Model.instance.getAllItems { items in
+
+            var filtered = [Item]()
+                
+            for item in items{
+                
+                if((self.categorySearchResult == "" || self.categorySearchResult == "None") && (self.locationSearchResult == "" || self.locationSearchResult == "None")){
+                    filtered.append(item)
+                }
+                else if((self.categorySearchResult != "" || self.categorySearchResult != "None") && (self.locationSearchResult == "" || self.locationSearchResult == "None")){
+                    if (self.categorySearchResult == item.itemCategory){
+                        filtered.append(item)
+                    }
+                }
+                else if((self.categorySearchResult == "" || self.categorySearchResult == "None")&&(self.locationSearchResult != "" || self.locationSearchResult != "None")){
+                    if (self.locationSearchResult == item.itemLocation){
+                        filtered.append(item)
+                    }
+                }
+                else{
+                    if (self.locationSearchResult == item.itemLocation && self.categorySearchResult == item.itemCategory){
+                        filtered.append(item)
+                    }
+                }
+            }
+            self.data = filtered
+            self.searchTableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+        //spiner?
     }
     
     //UITableViewDelegate
@@ -57,6 +111,8 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // asaf
+        /*
         Model.instance.getAllItems { items in
             
         
@@ -86,7 +142,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
             }
         self.data = filtered
         self.searchTableView.reloadData()
-            }
+            }*/
             
         }
     
