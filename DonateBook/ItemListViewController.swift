@@ -21,7 +21,43 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // get all from viewWillAppear
+        reloadData()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(Model.notificationItemList), object: nil, queue: nil){
+            (notification) in
+            self.reloadData()
+        }
         
+    }
+    
+    func reloadData(){
+        //spiner
+        Model.instance.getAllItems { items in
+            let user = Auth.auth().currentUser
+            if let user = user {
+            // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server,
+            // if you have one. Use getTokenWithCompletion:completion: instead.
+            let uid = user.uid
+            //let email = user.email
+            //let photoURL = user.photoURL
+            var multiFactorString = "MultiFactor: "
+            for info in user.multiFactor.enrolledFactors {
+                multiFactorString += info.displayName ?? "[DispayName]"
+                multiFactorString += " "
+            }
+            var filtered = [Item]()
+            for item in items{
+                if(user.uid == item.userUID){
+                    filtered.append(item)
+                }
+            }
+            self.data = filtered
+            self.ItemTableView.reloadData()
+            
+            }
+        }
+        //spiner
     }
     
     @IBAction func editButton(_ sender: Any) {
@@ -69,6 +105,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             
     
             override func viewWillAppear(_ animated: Bool) {
+                // comment this code?
                 super.viewWillAppear(animated)
                 Model.instance.getAllItems { items in
                     

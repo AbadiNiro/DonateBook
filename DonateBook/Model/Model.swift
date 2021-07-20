@@ -12,6 +12,7 @@ import UIKit
 import CoreData
 
 class Model{
+    static public let notificationItemList = "com.DonateBook.notificationItemList"
     static let instance = Model()
     let modelFirebase = ModelFirebase()
     
