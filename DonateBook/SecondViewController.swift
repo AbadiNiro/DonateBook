@@ -34,18 +34,20 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = searchTableView.dequeueReusableCell(withIdentifier: "searchListRow", for:indexPath) as! ItemTableViewCell
+            //let cell = searchTableView.dequeueReusableCell(withIdentifier: "searchListRow", for:indexPath) as! ItemTableViewCell
+                
+            // let item = data[indexPath.row]
+            //cell.itemName.text = item.itemName
+            // cell.itemCategory.text = item.itemCategory
+            // cell.itemLocation.text = item.itemLocation
+            // cell.itemDescription.text = item.itemDescription
+            //  cell.itemContact.text = item.itemContact
+            //cell.itemImg.image = item.imgUr
+                
+            //return cell
+              return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "searchListRow",data:data)
         
-        let item = data[indexPath.row]
-        cell.itemName.text = item.itemName
-        cell.itemCategory.text = item.itemCategory
-        cell.itemLocation.text = item.itemLocation
-        cell.itemDescription.text = item.itemDescription
-        cell.itemContact.text = item.itemContact
-        //cell.itemImg.image = item.imgUrl
-        
-        return cell
-        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
@@ -62,15 +64,15 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
         for item in items{
             
-            if(self.categorySearchResult == "" || self.categorySearchResult == "None" && self.locationSearchResult == "" || self.locationSearchResult == "None"){
+            if((self.categorySearchResult == "" || self.categorySearchResult == "None") && (self.locationSearchResult == "" || self.locationSearchResult == "None")){
                 filtered.append(item)
             }
-            if(self.categorySearchResult != "" || self.categorySearchResult != "None" && self.locationSearchResult == "" || self.locationSearchResult != "None"){
+            else if((self.categorySearchResult != "" || self.categorySearchResult != "None") && (self.locationSearchResult == "" || self.locationSearchResult == "None")){
                 if (self.categorySearchResult == item.itemCategory){
                     filtered.append(item)
                 }
             }
-            if(self.categorySearchResult == "" || self.categorySearchResult == "None" && self.locationSearchResult != "" || self.locationSearchResult != "None"){
+            else if((self.categorySearchResult == "" || self.categorySearchResult == "None")&&(self.locationSearchResult != "" || self.locationSearchResult != "None")){
                 if (self.locationSearchResult == item.itemLocation){
                     filtered.append(item)
                 }

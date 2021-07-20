@@ -49,21 +49,23 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = ItemTableView.dequeueReusableCell(withIdentifier: "itemListRow") as! ItemTableViewCell
+           // let cell = ItemTableView.dequeueReusableCell(withIdentifier: "itemListRow") as! ItemTableViewCell
             
-            let item = data[indexPath.row]
-            cell.itemName.text = item.itemName
-            cell.itemCategory.text = item.itemCategory
-            cell.itemLocation.text = item.itemLocation
-            cell.itemDescription.text = item.itemDescription
-            cell.itemContact.text = item.itemContact
+            //let item = data[indexPath.row]
+            //cell.itemName.text = item.itemName
+            //cell.itemCategory.text = item.itemCategory
+            //cell.itemLocation.text = item.itemLocation
+            //cell.itemDescription.text = item.itemDescription
+            //cell.itemContact.text = item.itemContact
             //cell.itemImg.image = item.imgUrl
             
-            return cell
+            //return cell
+            return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "itemListRow",data:data)
         }
             func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 
             }
+        
             
     
             override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +78,8 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
                       // Do NOT use this value to authenticate with your backend server,
                       // if you have one. Use getTokenWithCompletion:completion: instead.
                       let uid = user.uid
-                      let email = user.email
-                      let photoURL = user.photoURL
+                    //let email = user.email
+                    //let photoURL = user.photoURL
                       var multiFactorString = "MultiFactor: "
                       for info in user.multiFactor.enrolledFactors {
                         multiFactorString += info.displayName ?? "[DispayName]"
