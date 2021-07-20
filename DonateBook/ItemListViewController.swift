@@ -14,20 +14,27 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
 
     var editingFlag = false
     var data = [Item]()
+    var refreshControl = UIRefreshControl()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // get all from viewWillAppear
+        ItemTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
         reloadData()
-        NotificationCenter.default.addObserver(forName: NSNotification.Name(Model.notificationItemList), object: nil, queue: nil){
-            (notification) in
+        Model.instance.notificationItemList.observe {
             self.reloadData()
         }
-        
+    }
+    
+    @objc func refresh (_ sender : AnyObject){
+        self.reloadData()
     }
     
     func reloadData(){
         //spiner
+        refreshControl.beginRefreshing()
         Model.instance.getAllItems { items in
             let user = Auth.auth().currentUser
             if let user = user {
@@ -50,6 +57,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             }
             self.data = filtered
             self.ItemTableView.reloadData()
+            self.refreshControl.endRefreshing()
             
             }
         }
@@ -144,7 +152,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 let item = data[indexPath.row]
-                Model.instance.delete(item: item)
+                Model.instance.delete(item: item){}//!!!
                 data.remove(at: indexPath.row)
              //   data.remove(at: indexPath.row)
                 // Delete the row from the data source

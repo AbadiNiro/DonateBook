@@ -12,9 +12,10 @@ import UIKit
 import CoreData
 
 class Model{
-    static public let notificationItemList = "com.DonateBook.notificationItemList"
     static let instance = Model()
     let modelFirebase = ModelFirebase()
+    
+    let notificationItemList = NotificationGeneralList(name : "itemNotification")
     
     private init(){}
     var items = [Item]()
@@ -24,16 +25,48 @@ class Model{
     }
     
     func add(item:Item,callback: @escaping ()->Void){
-        modelFirebase.add(item: item, callback: callback)
-        /*{
-            NotificationCenter.default.post(name: NSNotification.Name(Model.notificationItemList), object: self)
-        }*/
-            
-        
+        modelFirebase.add(item: item){
+            self.notificationItemList.post()
+        }
     }
     
-    func delete(item:Item){
-        modelFirebase.delete(item: item, callback: callback)
+    
+    func delete(item:Item,callback: @escaping ()->Void){
+        modelFirebase.delete(item: item){
+            self.notificationItemList.post()
+        }
     }
+    
     
 }
+
+class NotificationGeneralList{
+    let name:String
+    
+    init(name:String) {
+        self.name = name
+    }
+    
+
+    
+    func post (){
+        NotificationCenter.default.post(name: NSNotification.Name(self.name), object: self)
+    }
+    
+    func observe( callback: @escaping ()->Void){
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(self.name), object: nil, queue: nil){
+            (notification) in
+            callback()
+        }
+    }
+}
+        
+    
+    
+    
+    
+    
+    
+    
+    
+
