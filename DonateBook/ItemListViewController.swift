@@ -89,22 +89,16 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           // let cell = ItemTableView.dequeueReusableCell(withIdentifier: "itemListRow") as! ItemTableViewCell
             
-            //let item = data[indexPath.row]
-            //cell.itemName.text = item.itemName
-            //cell.itemCategory.text = item.itemCategory
-            //cell.itemLocation.text = item.itemLocation
-            //cell.itemDescription.text = item.itemDescription
-            //cell.itemContact.text = item.itemContact
-            //cell.itemImg.image = item.imgUrl
+    
             
-            //return cell
+            
             return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "itemListRow",data:data)
         }
-            func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                
-            }
+    
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        }
         
             
     

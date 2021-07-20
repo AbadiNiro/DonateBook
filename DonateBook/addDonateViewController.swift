@@ -8,7 +8,7 @@
 
 import UIKit
 //var id:Int16 = 0
-class addDonateViewController: UIViewController {
+class addDonateViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //@IBOutlet weak var itemImg: UIImageView!
     //@IBOutlet weak var itemName: UITextField!
@@ -30,6 +30,8 @@ class addDonateViewController: UIViewController {
     var categories = ["Furniture","Kitchen","Outdoor","Cloth","Shoes","Electronics","Sport equipment","Art","Cosmetics"]
     
     var locations = ["North","Center","South","Jerusalem","Hasharon","East Bank"]
+    
+    var image : UIImage?
     
     
     override func viewDidLoad() {
@@ -61,46 +63,18 @@ class addDonateViewController: UIViewController {
         
     }
     
-   
     @IBAction func saveItem(_ sender: Any) {
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd-HH:mm:ss:ms"
-        let timeStamp = format.string(from:date)
-                
-        var item = Item.create(itemNumber:timeStamp ,itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: "")
-        
-         //id = id+1
-        //print(item.itemNumber)
-                   
-        //todo  image
-        
-//        item.itemNumber = id
-//        id = id+1
-//        item.itemName = itemName.text
-//        item.itemDescription = itemDescription.text
-//        item.itemCategory = itemCategory.text
-//        item.itemLocation = itemLocation.text
-//        item.itemContact = itemContact.text
-          Model.instance.add(item: item ,callback: { self.navigationController?.popViewController(animated: true)})
-          //print ("bla" + item.itemNumber!)
+        if let image = image{
+            Model.instance.saveImage(image: image){ (url) in
+                self.createItem(url: url)
+            }
+        }else{
+                self.createItem(url: "")
+            }
+        }
     
-    }
     
- /*   @IBAction func save(_ sender: Any){
-        let item = Item()
-        
-        // todo id???, image
-        item.itemNumber = id
-        id = id+1
-        item.itemName = itemName.text
-        item.itemDescription = itemDescription.text
-        item.itemCategory = itemCategory.text
-        item.itemLocation = itemLocation.text
-        Model.instance.add(item: item)
-        navigationController?.popViewController(animated: true)
-    }*/
-    
+
     /*
     // MARK: - Navigation
 
@@ -110,15 +84,48 @@ class addDonateViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func createItem (url:String){
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd-HH:mm:ss:ms"
+        let timeStamp = format.string(from:date)
+                
+        let item = Item.create(itemNumber:timeStamp ,itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: url)
+        
+          Model.instance.add(item: item){ self.navigationController?.popViewController(animated: true)}
     }
+    
+    @IBAction func addImg(_ sender: Any) {
+        if   UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
+             let imgPicker = UIImagePickerController()
+             imgPicker.delegate = self
+             imgPicker.sourceType = UIImagePickerController.SourceType.camera
+             imgPicker.allowsEditing = true
+             self.present(imgPicker, animated: true, completion: nil)}
+        else{
+             let imgPicker = UIImagePickerController()
+             imgPicker.delegate = self
+             imgPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+             imgPicker.allowsEditing = true
+             self.present(imgPicker, animated: true, completion: nil)
+            }
+    }
+    
+   
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.itemImg.image = image
+        self.dismiss(animated: true, completion: nil)
+    }
+
+}
 
 extension addDonateViewController:UIPickerViewDelegate , UIPickerViewDataSource{
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
-    
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView.tag == 1){

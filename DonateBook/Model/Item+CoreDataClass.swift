@@ -146,6 +146,9 @@ extension Item{
                    cell.itemDescription.text = item.itemDescription
                    cell.itemContact.text = item.itemContact
                    //cell.itemImg.image = item.imgUrl
+        
+                  let url = item.imgUrl
+                    
                    
                    return cell
         

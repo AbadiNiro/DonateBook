@@ -59,5 +59,25 @@ class ModelFirebase{
         }
         callback()
     }
-
+    
+    static func saveImage(image:UIImage, callback:@escaping (String)->Void){
+        
+     let storageRef = Storage.storage().reference(forURL:
+     "gs://donatebook-9ddfe.appspot.com/pictures")
+        
+     let data = image.jpegData(compressionQuality: 0.8)
+     let imageRef = storageRef.child("imageName")
+     let metadata = StorageMetadata()
+     metadata.contentType = "image/jpeg"
+     imageRef.putData(data!, metadata: metadata) { (metadata, error) in
+        imageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    callback("")
+                    return
+                }
+                print("url: \(downloadURL)")
+                callback(downloadURL.absoluteString)
+            }
+        }
+     }
 }

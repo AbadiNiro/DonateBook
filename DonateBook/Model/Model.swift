@@ -26,6 +26,7 @@ class Model{
     
     func add(item:Item,callback: @escaping ()->Void){
         modelFirebase.add(item: item){
+            callback()
             self.notificationItemList.post()
         }
     }
@@ -35,6 +36,10 @@ class Model{
         modelFirebase.delete(item: item){
             self.notificationItemList.post()
         }
+    }
+    
+    func saveImage(image:UIImage,callback:@escaping (String)->Void){
+        ModelFirebase.saveImage(image: image, callback: callback)
     }
     
     
