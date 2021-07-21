@@ -5,10 +5,10 @@
 //  Created by admin on 06/07/2021.
 //  Copyright © 2021 donatebook. All rights reserved.
 //
-
+import CoreLocation
 import UIKit
 //var id:Int16 = 0
-class addDonateViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class addDonateViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate , CLLocationManagerDelegate{
     
     //@IBOutlet weak var itemImg: UIImageView!
     //@IBOutlet weak var itemName: UITextField!
@@ -24,6 +24,14 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var itemDescription: UITextField!
     @IBOutlet weak var itemContact: UITextField!
     
+    @IBOutlet weak var useLocation: UISwitch!
+    
+    var manager : CLLocationManager = CLLocationManager()
+    
+    
+    var latitude:String = ""
+    var longitude:String = ""
+    
     var pickerViewCategories = UIPickerView()
     var pickerViewLocations = UIPickerView()
     
@@ -38,7 +46,6 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         pickerViewCategories.delegate = self
         pickerViewCategories.dataSource = self
-        
         pickerViewLocations.delegate = self
         pickerViewLocations.dataSource = self
         
@@ -49,7 +56,16 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
         
         pickerViewCategories.tag = 1
         pickerViewLocations.tag = 2
+        
+        
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toAddDonateSegue"){
@@ -90,11 +106,28 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd-HH:mm:ss:ms"
         let timeStamp = format.string(from:date)
-                
-        let item = Item.create(itemNumber:timeStamp ,itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: url)
+        
+        if(!useLocation.isOn){
+            //get current location
+            longitude = ""
+            latitude = ""
+        }
+        let item = Item.create(itemNumber:timeStamp ,itemName: itemName.text!, itemDescription: itemDescription.text!, itemCategory: itemCategory.text!, itemLocation: itemLocation.text!, itemContact: itemContact.text!, imgUrl: url,latitude: latitude, longitude: longitude)
         
           Model.instance.add(item: item){ self.navigationController?.popViewController(animated: true)}
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        
+        guard let first = locations.first else {
+            return
+        }
+        
+        latitude = String(first.coordinate.latitude)
+        longitude = String(first.coordinate.longitude)
+        print ("lan and lon" + longitude + " " + latitude)
+    }
+   
     
     @IBAction func addImg(_ sender: Any) {
         if   UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
@@ -121,7 +154,7 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
 
 }
 
-extension addDonateViewController:UIPickerViewDelegate , UIPickerViewDataSource{
+extension addDonateViewController:UIPickerViewDelegate , UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -159,9 +192,9 @@ extension addDonateViewController:UIPickerViewDelegate , UIPickerViewDataSource{
     
     }
     
+    
         
         
         
         
-        
-    }
+}

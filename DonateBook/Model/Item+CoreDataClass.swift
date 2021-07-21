@@ -17,7 +17,7 @@ import Firebase
 public class Item: NSManagedObject {
     
     
-    static func create(itemNumber:String ,  itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String, lastUpdated:Int64 = 0)->Item{
+    static func create(itemNumber:String ,  itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String, lastUpdated:Int64 = 0, latitude:String, longitude:String)->Item{
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -31,6 +31,8 @@ public class Item: NSManagedObject {
         item.imgUrl = imgUrl
         item.lastUpdated = lastUpdated
         item.delFlag = false
+        item.latitude = latitude
+        item.longitude = longitude
         
         let user = Auth.auth().currentUser
         if let user = user {
@@ -71,11 +73,14 @@ public class Item: NSManagedObject {
         if let df = json["delFlag"] as? Bool{
             item.delFlag = df
         }
+        item.latitude = json["latitude"]as? String
+        item.longitude = json["longitude"]as? String
         return item
     }
     
     
     func toJson()->[String:Any]{
+        
           var json = [String:Any]()
           json["itemNumber"] = itemNumber!
           json["itemName"] = itemName!
@@ -90,6 +95,8 @@ public class Item: NSManagedObject {
           }
           json["lastUpdated"] = FieldValue.serverTimestamp()
           json["delFlag"] = delFlag
+          json["latitude"] = latitude!
+          json["longitude"] = longitude!
         
         let user = Auth.auth().currentUser
         if let user = user {

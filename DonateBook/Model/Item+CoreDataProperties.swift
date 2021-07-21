@@ -16,6 +16,7 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item")
     }
 
+    @NSManaged public var delFlag: Bool
     @NSManaged public var imgUrl: String?
     @NSManaged public var itemCategory: String?
     @NSManaged public var itemContact: String?
@@ -23,8 +24,9 @@ extension Item {
     @NSManaged public var itemLocation: String?
     @NSManaged public var itemName: String?
     @NSManaged public var itemNumber: String?
-    @NSManaged public var userUID: String?
     @NSManaged public var lastUpdated: Int64
-    @NSManaged public var delFlag: Bool
+    @NSManaged public var userUID: String?
+    @NSManaged public var longitude: String?
+    @NSManaged public var latitude: String?
 
 }

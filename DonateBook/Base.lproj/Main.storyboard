@@ -17,32 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="132" y="426.5" width="150" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dSr-JL-0bG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="dSr-JL-0bG" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="2pl-QW-SXQ"/>
+                            <constraint firstItem="dSr-JL-0bG" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="5ow-8g-Fj0"/>
+                            <constraint firstItem="dSr-JL-0bG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MaS-u3-MpM"/>
+                            <constraint firstItem="dSr-JL-0bG" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="shg-Mc-LJs"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="tabBarItem:acW-dT-cKf:image" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="mapView" destination="dSr-JL-0bG" id="jff-1U-3vn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="390"/>
+            <point key="canvasLocation" x="376.81159420289856" y="389.73214285714283"/>
         </scene>
         <!--List-->
         <scene sceneID="wg7-f3-ORb">
@@ -377,7 +372,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUa-aD-P26">
-                                <rect key="frame" x="20" y="617" width="181" height="21"/>
+                                <rect key="frame" x="20" y="662" width="181" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -402,7 +397,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu4-h0-ygs">
-                                <rect key="frame" x="20" y="661" width="363" height="34"/>
+                                <rect key="frame" x="20" y="709" width="363" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -439,7 +434,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-6S-Qgc">
-                                <rect key="frame" x="116" y="712" width="183" height="60"/>
+                                <rect key="frame" x="116" y="762" width="183" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Make a Donate!"/>
                                 <connections>
@@ -447,6 +442,17 @@
                                     <segue destination="7hX-0K-kMz" kind="unwind" unwindAction="backToMyDonationsWithSegue:" id="vZ6-r5-PhF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use current location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bd-Tj-AZi">
+                                <rect key="frame" x="20" y="618" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzK-3t-W4n">
+                                <rect key="frame" x="195" y="613" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sNj-90-9KK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -459,6 +465,7 @@
                         <outlet property="itemImg" destination="Lci-aY-sJn" id="GGQ-r6-BMS"/>
                         <outlet property="itemLocation" destination="43u-md-ciR" id="tap-Kz-kiH"/>
                         <outlet property="itemName" destination="a49-D2-VZx" id="H3g-6x-47T"/>
+                        <outlet property="useLocation" destination="xzK-3t-W4n" id="rnu-vt-Lgp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R1O-1V-8cN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
