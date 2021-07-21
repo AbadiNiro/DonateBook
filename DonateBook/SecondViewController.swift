@@ -9,18 +9,38 @@
 import UIKit
 import MapKit
 import CoreLocation
-class SecondViewController:UIViewController{
-    let initlocation = CLLocationCoordinate2D(latitude: 31.000, longitude: 34.000)
-    
+class SecondViewController:UIViewController, MKMapViewDelegate{
+ 
     @IBOutlet weak var mapView: MKMapView!
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let mark = Marker(title: "home", subtitle: "asafi", coordinate: initlocation)
-        mapView.addAnnotation(mark)
-      }
+  
+        
+        
+        
+        Model.instance.getAllItems { items in
+
+                
+            for item in items{
+                if (item.latitude != "" ){
+                    let longDouble = Double(item.longitude!)
+                    let latDouble = Double(item.latitude!)
+                    let currentLocation = CLLocationCoordinate2D(latitude: latDouble!, longitude: longDouble!)
+                    let mark  = Marker(title: item.itemName!, subtitle: item.itemDescription!, coordinate: currentLocation)
+                    self.mapView.addAnnotation(mark)
+                   // mapView.delegate = self
+                    
+                }
+                
+            }
+        }
+        
+           
+    }
+
     
         
 }

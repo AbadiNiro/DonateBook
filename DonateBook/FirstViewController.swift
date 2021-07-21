@@ -26,7 +26,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
        
         print(categorySearchResult + locationSearchResult)
         
-        //asaf
         searchTableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
         reloadData()
