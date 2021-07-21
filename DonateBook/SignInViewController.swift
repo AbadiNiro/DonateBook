@@ -23,6 +23,8 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    
     @IBAction func didTapLogin(_ sender: Any) {
         
         FirebaseAuth.Auth.auth().signIn(withEmail: userName.text!, password: passWord.text!) { [weak self] authResult, error in

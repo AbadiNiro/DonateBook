@@ -11,13 +11,13 @@ import CoreData
 import UIKit
 import FirebaseAuth
 import Kingfisher
-
+import Firebase
 
 @objc(Item)
 public class Item: NSManagedObject {
     
     
-    static func create(itemNumber:String ,  itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String)->Item{
+    static func create(itemNumber:String ,  itemName: String, itemDescription:String, itemCategory:String, itemLocation:String, itemContact:String, imgUrl:String, lastUpdated:Int64 = 0)->Item{
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -29,6 +29,8 @@ public class Item: NSManagedObject {
         item.itemLocation = itemLocation
         item.itemDescription = itemDescription
         item.imgUrl = imgUrl
+        item.lastUpdated = lastUpdated
+        item.delFlag = false
         
         let user = Auth.auth().currentUser
         if let user = user {
@@ -48,6 +50,7 @@ public class Item: NSManagedObject {
         
         return item
     }
+    
     static func create(json:[String:Any])->Item?{
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
       
@@ -60,8 +63,14 @@ public class Item: NSManagedObject {
         item.itemDescription = json["itemDescription"]as? String
         item.imgUrl = json["imgUrl"]as? String
         item.userUID = json["userUID"]as? String
-       
-        
+        item.lastUpdated = 0
+        if let timestamp = json["lastUpdated"] as? Timestamp{
+            item.lastUpdated = timestamp.seconds
+        }
+        item.delFlag = false
+        if let df = json["delFlag"] as? Bool{
+            item.delFlag = df
+        }
         return item
     }
     
@@ -79,6 +88,8 @@ public class Item: NSManagedObject {
           }else{
               json["imgUrl"] = " "
           }
+          json["lastUpdated"] = FieldValue.serverTimestamp()
+          json["delFlag"] = delFlag
         
         let user = Auth.auth().currentUser
         if let user = user {
@@ -104,37 +115,38 @@ extension Item{
    static func getAll(callback:@escaping ([Item])->Void){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request = Item.fetchRequest() as NSFetchRequest<Item>
+        request.predicate = NSPredicate(format: "delFlag != true")
         DispatchQueue.global().async {
             var data = [Item]()
             do{
                 data = try context.fetch(request)
-           }catch{
+            }catch{
                
-           }
-        DispatchQueue.main.async{
+            }
+            DispatchQueue.main.async{
                 callback(data)
                 
             }
         }
         
     }
-    
+
     func save(){
-            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         do{
         try context.save()
         }
         catch{}
     }
-    
+
     func delete(){
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         context.delete(self)
         do{
-              try context.save()
-              }
-              catch{}
+            try context.save()
+        }
+        catch{}
 
         }
     
@@ -151,12 +163,18 @@ extension Item{
         let url = item.imgUrl
         
         // check
-        let url1 = URL(string: String(url!))
+        let url1 = URL(string: String(url!))               
         cell.itemImg.kf.setImage(with:url1)
 
         return cell
         
     }
+    static func setLocalLastUpdate(_ localLastUpdate:Int64){
+        UserDefaults.standard.setValue( localLastUpdate, forKey: "ItemsLastUpdateDate")
+    }
+    
+    static func getLocalLastUpdate()->Int64{
+        Int64(UserDefaults.standard.integer(forKey: "ItemsLastUpdateDate"))
+    }
     
 }
-

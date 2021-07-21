@@ -14,18 +14,20 @@ class ModelFirebase{
         //FirebaseApp.configure()
     }
     
-    func getAllItems(callback:@escaping ([Item])->Void){
+    func getAllItems(since:Int64, callback:@escaping ([Item])->Void){
         let db = Firestore.firestore()
-        db.collection("items").getDocuments{snapshot, error in
+        db.collection("items")
+            .whereField("lastUpdated", isGreaterThan: Timestamp(seconds: since, nanoseconds: 0)).getDocuments{snapshot, error in
             if let err = error{
                 print("Error reading document:\(err)")
             }else{
                 if let snapshot = snapshot{
                     var items = [Item]()
+                    print ("FB returned \(snapshot.count)")
                     for snap in snapshot.documents{
                         if let it = Item.create(json:snap.data()){
-                            items.append(it)
-                        }
+                                items.append(it)
+                            }
                     }
                     callback(items)
                     return
@@ -35,6 +37,8 @@ class ModelFirebase{
         }
     }
     
+    
+    
     func add(item:Item,callback: @escaping ()->Void ){
         let db = Firestore.firestore()
         db.collection("items").document(item.itemNumber!).setData(item.toJson()){
@@ -42,10 +46,10 @@ class ModelFirebase{
             if let err = err {
                 print("Error writing document: \(err)")
             }else{
-                print("Document successfully written!")
+                print("Document successfully written/edited!")
             }
-            callback()
         }
+        callback()
     }
     
     func delete(item:Item, callback: @escaping ()->Void ){

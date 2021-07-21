@@ -142,15 +142,17 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 let item = data[indexPath.row]
-                Model.instance.delete(item: item){}//!!!
-                data.remove(at: indexPath.row)
-             //   data.remove(at: indexPath.row)
-                // Delete the row from the data source
+                Model.instance.delete(item: item){
+                    //Verify delete in FB
+                    self.data.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
+                }//!!!
+               
             } else if editingStyle == .insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }
         }
+    
     @IBAction func didTapSignOut(_ sender: Any) {
         
         let firebaseAuth = Auth.auth()

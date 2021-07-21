@@ -10,10 +10,10 @@
 		0A7B0E2BB30540EE10F2A77A /* Pods_DonateBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF3F63DE426C4A8C120F335 /* Pods_DonateBookTests.framework */; };
 		840B63CA26A46FFD007BCB62 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B63C926A46FFD007BCB62 /* SearchViewController.swift */; };
 		840B63CF26A4AFDB007BCB62 /* SearchTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B63CE26A4AFDB007BCB62 /* SearchTabBarViewController.swift */; };
+		8433C70B26A842B900A9B7E7 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433C70A26A842B900A9B7E7 /* Item+CoreDataProperties.swift */; };
 		84613023269B0EBC00977CEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84613022269B0EBB00977CEF /* GoogleService-Info.plist */; };
 		84613042269B149E00977CEF /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84613041269B149E00977CEF /* ModelFirebase.swift */; };
 		84B5BE38269F3D640088401E /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */; };
-		84B5BE3A269F3D790088401E /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */; };
 		84B5BE3E269F572E0088401E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE3D269F572E0088401E /* SignUpViewController.swift */; };
 		84B5BE40269F58D50088401E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5BE3F269F58D50088401E /* SignInViewController.swift */; };
 		84C2054B2695AF4D009272B5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2054A2695AF4C009272B5 /* Model.swift */; };
@@ -55,10 +55,10 @@
 		0C170BE8E1CDDB4F5EA46183 /* Pods-DonateBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DonateBook.debug.xcconfig"; path = "Target Support Files/Pods-DonateBook/Pods-DonateBook.debug.xcconfig"; sourceTree = "<group>"; };
 		840B63C926A46FFD007BCB62 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		840B63CE26A4AFDB007BCB62 /* SearchTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewController.swift; sourceTree = "<group>"; };
+		8433C70A26A842B900A9B7E7 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "/Users/admin/Desktop/DonateBookDEV4/DonateBook/Model/Item+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		84613022269B0EBB00977CEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84613041269B149E00977CEF /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84B5BE3D269F572E0088401E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84B5BE3F269F58D50088401E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		84C2054A2695AF4C009272B5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				84B5BE37269F3D640088401E /* Item+CoreDataClass.swift */,
-				84B5BE39269F3D790088401E /* Item+CoreDataProperties.swift */,
+				8433C70A26A842B900A9B7E7 /* Item+CoreDataProperties.swift */,
 				84C2054A2695AF4C009272B5 /* Model.swift */,
 				84613041269B149E00977CEF /* ModelFirebase.swift */,
 				84C2E615269D97E8003CC0A5 /* ItemModel.xcdatamodeld */,
@@ -460,6 +460,7 @@
 			files = (
 				840B63CA26A46FFD007BCB62 /* SearchViewController.swift in Sources */,
 				84B5BE40269F58D50088401E /* SignInViewController.swift in Sources */,
+				8433C70B26A842B900A9B7E7 /* Item+CoreDataProperties.swift in Sources */,
 				84E2526A269449F9003606B2 /* SecondViewController.swift in Sources */,
 				84E2529B26948C18003606B2 /* ItemListViewController.swift in Sources */,
 				84C2E617269D97E8003CC0A5 /* ItemModel.xcdatamodeld in Sources */,
@@ -467,7 +468,6 @@
 				84B5BE38269F3D640088401E /* Item+CoreDataClass.swift in Sources */,
 				84613042269B149E00977CEF /* ModelFirebase.swift in Sources */,
 				840B63CF26A4AFDB007BCB62 /* SearchTabBarViewController.swift in Sources */,
-				84B5BE3A269F3D790088401E /* Item+CoreDataProperties.swift in Sources */,
 				84E25264269449F9003606B2 /* AppDelegate.swift in Sources */,
 				84C2054B2695AF4D009272B5 /* Model.swift in Sources */,
 				84E2529D269496CA003606B2 /* ItemTableViewCell.swift in Sources */,

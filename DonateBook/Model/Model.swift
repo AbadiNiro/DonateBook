@@ -21,9 +21,49 @@ class Model{
     var items = [Item]()
     
     func getAllItems(callback:@escaping ([Item])->Void){
-        modelFirebase.getAllItems(callback: callback)
+        // get the local update date
+        var localLastUpdate = Item.getLocalLastUpdate()
+        
+        //get updates from FB
+        modelFirebase.getAllItems(since:localLastUpdate){(items) in
+           
+            //update the local update date
+            for it in items{
+                print("item lastUP = \(it.lastUpdated)")
+                
+                if(it.lastUpdated > localLastUpdate){
+                    localLastUpdate = it.lastUpdated
+                }
+                /*
+                if(!it.delFlag){
+                    if(it.lastUpdated > localLastUpdate){
+                        localLastUpdate = it.lastUpdated
+                    }
+                }*/
+            }
+            
+          
+            Item.setLocalLastUpdate(localLastUpdate)
+            
+            //remove deleted
+            for it in items{
+                if it.delFlag{
+                    it.delete()
+                }
+            }
+            
+            //update the local DB
+            if (items.count > 0 ){
+                items[0].save()
+            }
+            
+            //read all students from local DB
+            //return the list to the caller
+            Item.getAll(callback: callback)
+            
+        }
     }
-    
+
     func add(item:Item,callback: @escaping ()->Void){
         modelFirebase.add(item: item){
             callback()
@@ -33,9 +73,8 @@ class Model{
     
     
     func delete(item:Item,callback: @escaping ()->Void){
-        modelFirebase.delete(item: item){
-            self.notificationItemList.post()
-        }
+        item.delFlag = true
+        modelFirebase.add(item: item,callback: callback)
     }
     
     func saveImage(image:UIImage,callback:@escaping (String)->Void){

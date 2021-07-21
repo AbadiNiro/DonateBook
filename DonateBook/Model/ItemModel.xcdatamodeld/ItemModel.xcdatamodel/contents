@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="delFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="imgUrl" optional="YES" attributeType="String"/>
         <attribute name="itemCategory" optional="YES" attributeType="String"/>
         <attribute name="itemContact" optional="YES" attributeType="String"/>
@@ -8,9 +9,15 @@
         <attribute name="itemLocation" optional="YES" attributeType="String"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="itemNumber" optional="YES" attributeType="String"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="userUID" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="itemNumber"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Item" positionX="-45" positionY="0" width="128" height="163"/>
+        <element name="Item" positionX="-45" positionY="0" width="128" height="193"/>
     </elements>
 </model>
