@@ -12,7 +12,7 @@
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="9pv-A4-QxB" customClass="FirstViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="9pv-A4-QxB" customClass="SecondViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,12 +42,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="-379"/>
+            <point key="canvasLocation" x="377" y="390"/>
         </scene>
         <!--List-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="8rJ-Kc-sve" userLabel="List" customClass="FirstViewController" customModule="DonateBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iQR-Ei-55D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,14 +127,14 @@
                         <viewLayoutGuide key="safeArea" id="gP8-ka-SqM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" image="tabBarItem:cPa-gy-q4n:image" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="List" image="tabBarItem:cPa-gy-q4n:image" id="cPa-gy-q4n" userLabel="List12432" colorLabel="IBBuiltInLabel-Purple"/>
                     <connections>
                         <outlet property="searchTableView" destination="f7a-6W-PVS" id="FWi-Vv-h82"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211.59420289855075" y="397.76785714285711"/>
+            <point key="canvasLocation" x="377" y="-465"/>
         </scene>
         <!--My Donations-->
         <scene sceneID="7Fw-ok-HYZ">
@@ -413,20 +413,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-6S-Qgc">
-                                <rect key="frame" x="116" y="691" width="183" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Make a Donate!"/>
-                                <connections>
-                                    <action selector="saveItem:" destination="yY8-M3-x1H" eventType="touchUpInside" id="eRw-DK-uIP"/>
-                                    <segue destination="7hX-0K-kMz" kind="unwind" unwindAction="backToMyDonationsWithSegue:" id="vZ6-r5-PhF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tI-Q8-nHE">
-                                <rect key="frame" x="178" y="781" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYf-e1-At9">
                                 <rect key="frame" x="20" y="287" width="181" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -450,6 +436,15 @@
                                 <state key="normal" title="Add image" image="camera" catalog="system"/>
                                 <connections>
                                     <action selector="addImg:" destination="yY8-M3-x1H" eventType="touchUpInside" id="Bux-Mc-W9E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-6S-Qgc">
+                                <rect key="frame" x="116" y="712" width="183" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make a Donate!"/>
+                                <connections>
+                                    <action selector="saveItem:" destination="yY8-M3-x1H" eventType="touchUpInside" id="eRw-DK-uIP"/>
+                                    <segue destination="7hX-0K-kMz" kind="unwind" unwindAction="backToMyDonationsWithSegue:" id="vZ6-r5-PhF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -583,8 +578,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="gTb-RI-qoC"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="H3G-vd-OXD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

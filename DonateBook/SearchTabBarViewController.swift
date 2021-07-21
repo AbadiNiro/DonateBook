@@ -16,7 +16,7 @@ class SearchTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc = self.viewControllers![1] as! SecondViewController
+        let vc = self.viewControllers![0] as! FirstViewController
         vc.categorySearchResult = categoryForSearch
         vc.locationSearchResult = locationForSearch
         print(categoryForSearch)
