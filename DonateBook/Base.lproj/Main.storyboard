@@ -252,10 +252,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ItemTableView" destination="Q1a-tL-c8h" id="pfH-hx-lTD"/>
-                        <segue destination="Eh0-lG-71e" kind="showDetail" identifier="tapSignOut" id="fsO-Yc-UAH"/>
+                        <segue destination="wY7-Vc-53I" kind="unwind" identifier="tapSignOut" unwindAction="backToWelcomeWithSegue:" id="ObX-bQ-Ct3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyG-tw-eSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wY7-Vc-53I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-738" y="1178"/>
         </scene>
@@ -485,7 +486,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHy-MG-E2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4383" y="431"/>
+            <point key="canvasLocation" x="-4383" y="447"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="izc-mV-GWM">

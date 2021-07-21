@@ -154,7 +154,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
         }
     
     @IBAction func didTapSignOut(_ sender: Any) {
-        
+     
         let firebaseAuth = Auth.auth()
     do {
       try firebaseAuth.signOut()

@@ -58,7 +58,6 @@ class SignInViewController: UIViewController {
         
     }
     @IBAction func backToWelcome(segue : UIStoryboardSegue){
-        print("exit")
         
     }
     
