@@ -125,7 +125,7 @@ class addDonateViewController: UIViewController, UIImagePickerControllerDelegate
         
         latitude = String(first.coordinate.latitude)
         longitude = String(first.coordinate.longitude)
-        print ("lan and lon" + longitude + " " + latitude)
+        print ("lat and lon" + longitude + " " + latitude)
     }
    
     
