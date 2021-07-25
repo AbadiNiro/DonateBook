@@ -12,12 +12,19 @@ import Firebase
 class SignInViewController: UIViewController {
 
     
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginGuestButton: UIButton!
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // front
+        //signUpButton.layer.corner = 10.0
+        
 
 
         // Do any additional setup after loading the view.

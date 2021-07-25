@@ -50,10 +50,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f7a-6W-PVS">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-grey-black-linear-2560x1800-c2-000000-708090-a-225-f-14" id="khZ-7E-vA5">
-                                    <rect key="frame" x="0.0" y="214" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchListRow" rowHeight="158" id="JCe-aq-DIF" userLabel="searchListRow" customClass="ItemTableViewCell" customModule="DonateBook" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="158"/>
@@ -150,6 +146,10 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="jep-5k-VmN"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="VGC-9L-ETt">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gP8-ka-SqM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,6 +163,7 @@
                     <tabBarItem key="tabBarItem" title="List" image="tabBarItem:cPa-gy-q4n:image" id="cPa-gy-q4n" userLabel="List12432" colorLabel="IBBuiltInLabel-Purple"/>
                     <connections>
                         <outlet property="searchTableView" destination="f7a-6W-PVS" id="FWi-Vv-h82"/>
+                        <outlet property="spinner" destination="VGC-9L-ETt" id="nES-Ix-jzA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -292,6 +293,10 @@
                                     <outlet property="delegate" destination="7Np-xb-n8B" id="cIy-ps-u9x"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="00X-Yg-eIf">
+                                <rect key="frame" x="197" y="164" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ty-fT-vV1">
                                 <rect key="frame" x="268" y="236" width="126" height="34"/>
                                 <constraints>
@@ -338,6 +343,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ItemTableView" destination="Q1a-tL-c8h" id="pfH-hx-lTD"/>
+                        <outlet property="spinner" destination="00X-Yg-eIf" id="V5g-aL-mNf"/>
                         <segue destination="wY7-Vc-53I" kind="unwind" identifier="tapSignOut" unwindAction="backToWelcomeWithSegue:" id="ObX-bQ-Ct3"/>
                     </connections>
                 </viewController>
@@ -798,7 +804,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="5c8-jq-Q3M"/>
                     <connections>
+                        <outlet property="loginButton" destination="lK7-6Z-889" id="XaE-Wd-10O"/>
+                        <outlet property="loginGuestButton" destination="2pO-ol-aqv" id="MFs-UJ-NI0"/>
                         <outlet property="passWord" destination="t4e-SO-iYB" id="BUj-TR-yLv"/>
+                        <outlet property="signUpButton" destination="oNW-Xc-Ry8" id="Tvu-m6-iqW"/>
                         <outlet property="userName" destination="KPq-C6-Jdb" id="cBe-Da-xJW"/>
                         <segue destination="pF6-rl-E3P" kind="presentation" identifier="tapLogin" id="iEo-XO-C2A"/>
                     </connections>

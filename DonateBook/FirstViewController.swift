@@ -10,6 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var searchTableView: UITableView!
     //var categoryForSearch = String()
     //var locationForSearch = String()
@@ -23,7 +24,9 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        
         print(categorySearchResult + locationSearchResult)
         
         searchTableView.addSubview(refreshControl)
@@ -72,6 +75,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.data = filtered
             self.searchTableView.reloadData()
             self.refreshControl.endRefreshing()
+            self.spinner.stopAnimating()
         }
         //spiner?
     }

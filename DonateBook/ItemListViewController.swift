@@ -12,6 +12,7 @@ import FirebaseAuth
 class ItemListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var ItemTableView: UITableView!
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var editingFlag = false
     var data = [Item]()
     var refreshControl = UIRefreshControl()
@@ -20,6 +21,10 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // get all from viewWillAppear
+        
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        
         ItemTableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action:#selector(refresh), for: .valueChanged)
         reloadData()
@@ -34,6 +39,8 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     
     func reloadData(){
         //spiner
+        
+        
         refreshControl.beginRefreshing()
         Model.instance.getAllItems { items in
             let user = Auth.auth().currentUser
@@ -58,9 +65,11 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
             self.data = filtered
             self.ItemTableView.reloadData()
             self.refreshControl.endRefreshing()
-            
+                self.spinner.stopAnimating()
             }
         }
+        
+        
         //spiner
     }
     
