@@ -72,7 +72,7 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if (segue.identifier == "toAddDonateSegue"){
-                print("dsas")
+                print("move to add donation segue")
             }
         }
         @IBAction func backToMyDonations(segue: UIStoryboardSegue){
@@ -100,46 +100,13 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     
             override func viewWillAppear(_ animated: Bool) {
                 super.viewWillAppear(animated)
-                // comment?
-                /*
-                Model.instance.getAllItems { items in
-                    
-                    let user = Auth.auth().currentUser
-                    if let user = user {
-                      // The user's ID, unique to the Firebase project.
-                      // Do NOT use this value to authenticate with your backend server,
-                      // if you have one. Use getTokenWithCompletion:completion: instead.
-                      let uid = user.uid
-                    //let email = user.email
-                    //let photoURL = user.photoURL
-                      var multiFactorString = "MultiFactor: "
-                      for info in user.multiFactor.enrolledFactors {
-                        multiFactorString += info.displayName ?? "[DispayName]"
-                        multiFactorString += " "
-                      }
-                    
-                    
-                    
-                    
-                    var filtered = [Item]()
-                    for item in items{
-                        if(user.uid == item.userUID){
-                            filtered.append(item)
-                        }
-                    }
-                    self.data = filtered
-                    self.ItemTableView.reloadData()
-                    
-                }
-                }
-                */
             }
     
             func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
                 editingFlag
             }
     
-            func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 let item = data[indexPath.row]
                 Model.instance.delete(item: item){
