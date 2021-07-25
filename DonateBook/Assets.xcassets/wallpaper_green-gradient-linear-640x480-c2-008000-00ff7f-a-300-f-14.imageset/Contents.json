@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "wallpaper_green-gradient-linear-640x480-c2-008000-00ff7f-a-300-f-14.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
