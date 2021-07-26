@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import Firebase
 class SignInViewController: UIViewController {
-
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
@@ -23,54 +22,30 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         // front
-        //signUpButton.layer.corner = 10.0
         
-
-
-        // Do any additional setup after loading the view.
+        signUpButton.layer.cornerRadius = 8
+        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.9)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white ]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
-    
-    
-    
+
     @IBAction func didTapLogin(_ sender: Any) {
         
         FirebaseAuth.Auth.auth().signIn(withEmail: userName.text!, password: passWord.text!) { [weak self] authResult, error in
             
-        /*  guard let strongSelf = self else {
-            
-               return     }
-          // ...
-            guard error == nil else {print("a")
-                return}
-            
-             print ("right customer")
-            
-        }*/
             //TODO alert window
             if error != nil {print ("login failed")}
             else {
                 print("login succeeded")
-                /*
-                let registeredZone = self?.storyboard?.instantiateViewController(withIdentifier:"registerZone")
-                
-                self?.view.window?.rootViewController = registeredZone
-                self?.view.window?.makeKeyAndVisible()*/
-                
-                //
                 self?.performSegue(withIdentifier: "tapLogin", sender: self)
             }
-            
-            
         }
-        
     }
+    
     @IBAction func backToWelcome(segue : UIStoryboardSegue){
         
     }
-    
-    
 
-    
     /*
     // MARK: - Navigation
 

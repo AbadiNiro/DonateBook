@@ -22,16 +22,7 @@ class SearchTabBarViewController: UITabBarController {
         print(categoryForSearch)
         // Do any additional setup after loading the view.
     }
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let vc = self.viewControllers![1] as! SecondViewController
-        vc.categorySearchResult = categoryForSearch
-        vc.locationSearchResult = locationForSearch
-        }*/
-    
-    
-
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -11,9 +11,6 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
-
-    
-    
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Pass: UITextField!
     @IBOutlet weak var Pass2: UITextField!
@@ -36,9 +33,6 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-     
 
     }
     

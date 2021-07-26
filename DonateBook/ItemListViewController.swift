@@ -21,6 +21,10 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // get all from viewWillAppear
+        //front
+        self.navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.9)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white ]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
@@ -45,12 +49,9 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
         Model.instance.getAllItems { items in
             let user = Auth.auth().currentUser
             if let user = user {
-            // The user's ID, unique to the Firebase project.
-            // Do NOT use this value to authenticate with your backend server,
-            // if you have one. Use getTokenWithCompletion:completion: instead.
+
             let uid = user.uid
-            //let email = user.email
-            //let photoURL = user.photoURL
+
             var multiFactorString = "MultiFactor: "
             for info in user.multiFactor.enrolledFactors {
                 multiFactorString += info.displayName ?? "[DispayName]"
@@ -76,71 +77,71 @@ class ItemListViewController: UIViewController,UITableViewDataSource,UITableView
     @IBAction func editButton(_ sender: Any) {
         editingFlag = !editingFlag
         ItemTableView.setEditing(editingFlag, animated: true)
-        }
+    }
     
     
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if (segue.identifier == "toAddDonateSegue"){
-                print("move to add donation segue")
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toAddDonateSegue"){
+            print("move to add donation segue")
         }
-        @IBAction func backToMyDonations(segue: UIStoryboardSegue){
-            print("Back to myDonation screen")
-        }
-    
-        //UITableViewDelegate
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return data.count
-        }
-            
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 158
-        }
+    }
+    @IBAction func backToMyDonations(segue: UIStoryboardSegue){
+        print("Back to myDonation screen")
+    }
 
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "itemListRow",data:data)
-        }
-    
-    
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        }
+    //UITableViewDelegate
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
         
-            
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 158
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return Item.itemCell(tableView,cellForRowAt: indexPath,identifier: "itemListRow",data:data)
+    }
+
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
     
-            override func viewWillAppear(_ animated: Bool) {
-                super.viewWillAppear(animated)
-            }
-    
-            func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-                editingFlag
-            }
-    
-        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            if editingStyle == .delete {
-                let item = data[indexPath.row]
-                Model.instance.delete(item: item){
-                    //Verify delete in FB
-                    self.data.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }//!!!
-               
-            } else if editingStyle == .insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            }
+        
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        editingFlag
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = data[indexPath.row]
+            Model.instance.delete(item: item){
+                //Verify delete in FB
+                self.data.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }//!!!
+           
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
     
     @IBAction func didTapSignOut(_ sender: Any) {
      
         let firebaseAuth = Auth.auth()
-    do {
-      try firebaseAuth.signOut()
-        print("signout succeeded")
-        self.performSegue(withIdentifier: "tapSignOut", sender: self)
+        do {
+            try firebaseAuth.signOut()
+            print("signout succeeded")
+            self.performSegue(withIdentifier: "tapSignOut", sender: self)
         
         
-    } catch let signOutError as NSError {
-      print("Error signing out: %@", signOutError)
-    }
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
             /*
     // MARK: - Navigation
